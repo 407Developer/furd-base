@@ -1,0 +1,158 @@
+---
+import Header from '../components/Header.astro';
+import '../styles/global.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/assets/FURD-BASE-main-logo.png" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="canonical" href="https://furdbase.ng/services" />
+    <title>Services | FURD BASE Architecture & Engineering</title>
+    <meta name="description" content="FURD BASE offers architecture design, civil/structural engineering, project management, and real estate development consulting across Nigeria." />
+    <meta property="og:title" content="Services | FURD BASE" />
+    <meta property="og:description" content="Architecture, engineering, and development services for luxury residential and commercial projects." />
+    <meta property="og:url" content="https://furdbase.ng/services" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/_astro/index.uxjtkwfg.css" />
+  </head>
+  <body class="bg-brand-dark text-white selection:bg-brand-red selection:text-white">
+    <Header />
+    <main class="pt-32 pb-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-20 max-w-3xl">
+          <span class="font-display text-xs md:text-sm tracking-[0.3em] uppercase text-brand-red font-semibold mb-3 block">
+            What We Deliver
+          </span>
+          <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight uppercase mb-6">
+            Full-Spectrum <span class="text-brand-red">Design & Build</span>
+          </h1>
+          <p class="text-brand-gray text-base md:text-lg font-light leading-relaxed">
+            From initial feasibility studies to final handover, FURD BASE provides end-to-end services for luxury residential and commercial developments across <strong class="text-white">Nigeria</strong> and the <strong class="text-white">UAE</strong>.
+          </p>
+        </div>
+
+        <div class="space-y-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div class="order-2 lg:order-1">
+              <span class="font-condensed text-5xl font-bold text-brand-red/20 block mb-2">01</span>
+              <h2 class="font-serif text-2xl md:text-3xl font-bold text-white uppercase mb-4">Architectural Design</h2>
+              <p class="text-brand-gray text-sm font-light leading-relaxed mb-6">
+                We create buildings that are both beautiful and functional. Our design process moves from concept through schematic design to detailed construction documents, always rooted in the site, the climate, and the client's vision.
+              </p>
+              <ul class="space-y-3">
+                {['Concept & schematic design', 'Construction documentation', '3D visualization & renderings', 'Material selection & specification', 'Interior spatial planning'].map((item) => (
+                  <li class="flex items-center gap-3 text-sm text-white/80">
+                    <span class="w-1.5 h-1.5 bg-brand-red rounded-full flex-shrink-0"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="order-1 lg:order-2 aspect-[4/3] rounded-xl overflow-hidden border border-white/5 bg-brand-charcoal">
+              <img src="/assets/3d-3.jpeg" alt="Architectural Design" class="w-full h-full object-cover opacity-80" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden border border-white/5 bg-brand-charcoal">
+              <img src="/assets/3d-8.jpeg" alt="Structural Engineering" class="w-full h-full object-cover opacity-80" />
+            </div>
+            <div>
+              <span class="font-condensed text-5xl font-bold text-brand-red/20 block mb-2">02</span>
+              <h2 class="font-serif text-2xl md:text-3xl font-bold text-white uppercase mb-4">Structural & Civil Engineering</h2>
+              <p class="text-brand-gray text-sm font-light leading-relaxed mb-6">
+                Our engineering team designs structures that stand the test of time. Using Eurocode 2, finite element analysis, and Nigerian building codes, we deliver safe, efficient, and buildable designs.
+              </p>
+              <ul class="space-y-3">
+                {['Geotechnical investigation & foundation design', 'Reinforced concrete & steel structure design', 'Post-tensioned slab engineering', 'Structural peer review & certification', 'Construction supervision & quality control'].map((item) => (
+                  <li class="flex items-center gap-3 text-sm text-white/80">
+                    <span class="w-1.5 h-1.5 bg-brand-red rounded-full flex-shrink-0"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div class="order-2 lg:order-1">
+              <span class="font-condensed text-5xl font-bold text-brand-red/20 block mb-2">03</span>
+              <h2 class="font-serif text-2xl md:text-3xl font-bold text-white uppercase mb-4">Real Estate Development</h2>
+              <p class="text-brand-gray text-sm font-light leading-relaxed mb-6">
+                From land acquisition advisory to full-scale development management, we help clients navigate the Nigerian real estate landscape with confidence and precision.
+              </p>
+              <ul class="space-y-3">
+                {['Feasibility studies & market analysis', 'Land acquisition & due diligence', 'Permit & regulatory approvals (FCDA, AMAC)', 'Project financing advisory', 'Turnkey development management'].map((item) => (
+                  <li class="flex items-center gap-3 text-sm text-white/80">
+                    <span class="w-1.5 h-1.5 bg-brand-red rounded-full flex-shrink-0"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="order-1 lg:order-2 aspect-[4/3] rounded-xl overflow-hidden border border-white/5 bg-brand-charcoal">
+              <img src="/assets/real-1.jpeg" alt="Real Estate Development" class="w-full h-full object-cover opacity-80" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden border border-white/5 bg-brand-charcoal">
+              <img src="/assets/3d-2.jpeg" alt="Project Management" class="w-full h-full object-cover opacity-80" />
+            </div>
+            <div>
+              <span class="font-condensed text-5xl font-bold text-brand-red/20 block mb-2">04</span>
+              <h2 class="font-serif text-2xl md:text-3xl font-bold text-white uppercase mb-4">Project Management</h2>
+              <p class="text-brand-gray text-sm font-light leading-relaxed mb-6">
+                We manage the entire construction lifecycle — from contractor procurement to site supervision to final snagging — ensuring your project is delivered on time, on budget, and to specification.
+              </p>
+              <ul class="space-y-3">
+                {['Contractor tender & evaluation', 'Budget & cost control', 'Site supervision & progress reporting', 'Quality assurance & materials testing', 'Handover & post-occupancy support'].map((item) => (
+                  <li class="flex items-center gap-3 text-sm text-white/80">
+                    <span class="w-1.5 h-1.5 bg-brand-red rounded-full flex-shrink-0"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-20">
+          <a href="/#contact" class="inline-flex items-center justify-center px-8 py-4 bg-brand-red hover:bg-brand-red-dark text-white text-xs font-bold uppercase tracking-widest rounded-lg transition-all">
+            Discuss Your Project
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-brand-dark/95 border-t border-white/5 py-12 text-center text-xs text-brand-gray">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+          <img src="/assets/FURD-BASE-main-logo.png" alt="Logo" class="h-6 w-auto opacity-50" />
+          <span class="font-serif tracking-widest text-white/60">FURD BASE</span>
+        </div>
+        <p>&copy; {new Date().getFullYear()} FURD BASE. All Rights Reserved. Abuja, Nigeria <span class="text-white/20 mx-1">|</span> Dubai, UAE</p>
+        <div class="flex items-center gap-4">
+          <a href="/" class="hover:text-brand-red transition-colors text-[10px] uppercase tracking-wider">Home</a>
+          <a href="/about" class="hover:text-brand-red transition-colors text-[10px] uppercase tracking-wider">About</a>
+          <a href="/services" class="hover:text-brand-red transition-colors text-[10px] uppercase tracking-wider">Services</a>
+          <a href="/blog" class="hover:text-brand-red transition-colors text-[10px] uppercase tracking-wider">Blog</a>
+          <span class="w-px h-4 bg-white/10"></span>
+          <a
+            href={import.meta.env.PUBLIC_LINKEDIN_URL || 'https://www.linkedin.com/company/furd-base/'}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-brand-red transition-colors"
+            aria-label="LinkedIn"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

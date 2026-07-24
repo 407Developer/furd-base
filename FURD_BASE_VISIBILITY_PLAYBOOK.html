@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>FURD BASE — Digital Visibility Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Outfit:wght@200;300;400;500;600;700;800&family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #9f131f;
+    --red-dark: #7d0514;
+    --dark: #070708;
+    --charcoal: #121214;
+    --gray: #8e8e93;
+    --light: #f8f9fa;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-sans: 'Outfit', sans-serif;
+    --font-serif: 'Cinzel', serif;
+    --font-condensed: 'Bebas Neue', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+
+  body {
+    background: var(--dark);
+    color: #e0e0e0;
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.7;
+    padding: 0;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Cover =============================================================== */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 800px; height: 800px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(159,19,31,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover-grid {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4rem;
+    opacity: 0.04;
+    pointer-events: none;
+  }
+  .cover-grid div { width: 1px; height: 100%; background: white; }
+  .cover-grid .hide-mobile { display: block; }
+  @media (max-width: 768px) { .cover-grid .hide-mobile { display: none; } }
+
+  .cover-label {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .cover-title {
+    font-family: var(--font-condensed);
+    font-size: clamp(3rem, 10vw, 7rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: white;
+    max-width: 900px;
+    margin-bottom: 0.5rem;
+  }
+  .cover-title em { color: var(--red); font-style: normal; }
+
+  .cover-sub {
+    font-family: var(--font-serif);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--gray);
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gray);
+  }
+  .cover-meta span { color: rgba(255,255,255,0.5); }
+
+  .cover-line {
+    width: 60px; height: 2px;
+    background: var(--red);
+    margin: 1.5rem auto;
+  }
+
+  /* Page ================================================================ */
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  @media print {
+    .page { max-width: 100%; padding: 2rem 1.5in; }
+    .cover { min-height: 100vh; }
+    section { page-break-inside: avoid; }
+    .section-title { page-break-after: avoid; }
+  }
+
+  /* Sections ============================================================ */
+  .section-number {
+    font-family: var(--font-condensed);
+    font-size: 3rem;
+    color: rgba(159,19,31,0.15);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: white;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(159,19,31,0.3);
+  }
+
+  .section-sub {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(159,19,31,0.3), transparent);
+    margin: 4rem 0;
+  }
+
+  /* Cards =============================================================== */
+  .card {
+    background: var(--charcoal);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(159,19,31,0.12);
+    border: 1px solid rgba(159,19,31,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .card-icon svg { width: 16px; height: 16px; fill: var(--red); }
+  .card-icon.is-checked svg { fill: #22c55e; }
+  .card-icon.is-checked { border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.1); }
+
+  .card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 600;
+  }
+
+  .card p, .card li {
+    font-size: 0.9rem;
+    color: #c0c0c0;
+    font-weight: 300;
+  }
+
+  .card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .card li {
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+  }
+  .card li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0.6em;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--red);
+  }
+
+  .card.highlight {
+    border-color: rgba(159,19,31,0.25);
+    background: linear-gradient(135deg, rgba(159,19,31,0.06), transparent);
+  }
+
+  .card.checklist li::before { background: #22c55e; }
+  .card.checklist li { padding-left: 1.5rem; }
+
+  /* KPI Box ============================================================= */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .kpi-box {
+    background: rgba(159,19,31,0.06);
+    border: 1px solid rgba(159,19,31,0.15);
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .kpi-value {
+    font-family: var(--font-condensed);
+    font-size: 2.2rem;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .kpi-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--gray);
+    font-weight: 500;
+  }
+
+  .kpi-desc {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    margin-top: 0.5rem;
+    font-weight: 300;
+  }
+
+  /* Tables ============================================================== */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+
+  th {
+    background: rgba(159,19,31,0.1);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.7rem;
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: #c0c0c0;
+    font-weight: 300;
+  }
+
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: rgba(255,255,255,0.015); }
+
+  /* Timeline ============================================================ */
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin: 1.5rem 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px; top: 0; bottom: 0;
+    width: 1px;
+    background: rgba(159,19,31,0.3);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem; top: 0.4rem;
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    background: var(--dark);
+    border: 2px solid var(--red);
+  }
+
+  .timeline-item.completed::before { background: var(--red); }
+
+  .timeline-item h4 {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    color: white;
+    font-weight: 600;
+  }
+
+  .timeline-item .day {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--red);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    font-weight: 300;
+  }
+
+  /* Tag ================================================================= */
+  .tag {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    margin-right: 0.3rem;
+  }
+  .tag-red { background: rgba(159,19,31,0.15); color: var(--red); }
+  .tag-green { background: rgba(34,197,94,0.1); color: #22c55e; }
+  .tag-gray { background: rgba(255,255,255,0.06); color: var(--gray); }
+
+  /* Quote =============================================================== */
+  .quote {
+    border-left: 2px solid var(--red);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--gray);
+    font-size: 0.9rem;
+    background: rgba(255,255,255,0.015);
+    border-radius: 0 8px 8px 0;
+  }
+
+  /* Freq table ========================================================== */
+  .freq-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1.5rem;
+    align-items: baseline;
+    margin: 1rem 0;
+  }
+  .freq-label {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+  }
+  .freq-desc {
+    font-size: 0.85rem;
+    color: #c0c0c0;
+    font-weight: 300;
+  }
+
+  /* Footer ============================================================== */
+  .footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.7rem;
+    color: var(--gray);
+    letter-spacing: 0.05em;
+  }
+
+  .footer span { color: rgba(255,255,255,0.3); }
+
+  h2, h4 { scroll-margin-top: 2rem; }
+
+  @media print {
+    html, body {
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+      background: var(--dark) !important;
+    }
+    .card, .kpi-box, th, td, .table-wrap, .quote, .cover {
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ COVER -->
+<section class="cover">
+  <div class="cover-grid">
+    <div></div><div class="hide-mobile"></div>
+    <div class="hide-mobile"></div><div class="hide-mobile"></div><div></div>
+  </div>
+
+  <div class="cover-label">FURD BASE &mdash; Standard Operating Procedure</div>
+  <div class="cover-line"></div>
+  <h1 class="cover-title">Digital Visibility<br><em>Playbook</em></h1>
+  <p class="cover-sub">Search &bull; LinkedIn &bull; Content &bull; Word of Mouth</p>
+
+  <div class="cover-meta">
+    <span>Nigeria <span style="color:rgba(255,255,255,0.15);margin:0 0.5rem;">|</span> UAE</span>
+    <span>Version 1.0</span>
+    <span>July 2026</span>
+  </div>
+</section>
+
+<!-- ============================================================ PAGE -->
+<div class="page">
+
+  <!-- Table of Contents -->
+  <section style="margin-bottom:4rem;">
+    <div class="section-number">00</div>
+    <h2 class="section-title">Contents</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem 2rem;margin-top:1.5rem;">
+      <a href="#s1" style="color:var(--red);text-decoration:none;font-size:0.9rem;">01 &mdash; Search Engine Visibility</a>
+      <a href="#s2" style="color:var(--red);text-decoration:none;font-size:0.9rem;">02 &mdash; LinkedIn Strategy</a>
+      <a href="#s3" style="color:var(--red);text-decoration:none;font-size:0.9rem;">03 &mdash; Content Engine</a>
+      <a href="#s4" style="color:var(--red);text-decoration:none;font-size:0.9rem;">04 &mdash; Word of Mouth</a>
+      <a href="#s5" style="color:var(--red);text-decoration:none;font-size:0.9rem;">05 &mdash; One-Week Launch Sprint</a>
+      <a href="#s6" style="color:var(--red);text-decoration:none;font-size:0.9rem;">06 &mdash; KPI Dashboard</a>
+    </div>
+  </section>
+
+  <!-- ======================================================== SECTION 1 -->
+  <section id="s1">
+    <div class="section-number">01</div>
+    <h2 class="section-title">Search Engine Visibility</h2>
+    <p class="section-sub">Getting FURD BASE on page one of Google for &ldquo;architect Abuja&rdquo;, &ldquo;luxury home builder Nigeria&rdquo;, and your own brand name.</p>
+
+    <div class="card highlight">
+      <div class="card-header">
+        <div class="card-icon is-checked">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <h3>Already Done</h3>
+      </div>
+      <ul>
+        <li>XML Sitemap generated &mdash; <code>/sitemap-index.xml</code></li>
+        <li><code>robots.txt</code> allows all crawlers</li>
+        <li>JSON-LD structured data (Organization + two addresses)</li>
+        <li>Canonical URLs on all 8 pages</li>
+        <li>Open Graph + Twitter Card meta tags</li>
+        <li>8 pages indexed-ready (home, about, services, blog &times; 5)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </div>
+        <h3>Google Search Console Setup</h3>
+      </div>
+      <ol style="padding-left:1.25rem;color:#c0c0c0;font-size:0.9rem;font-weight:300;">
+        <li style="margin-bottom:0.5rem;">Go to <strong style="color:white;">search.google.com/search-console</strong></li>
+        <li style="margin-bottom:0.5rem;">Add property: <code style="color:var(--red);">https://furdbase.ng</code></li>
+        <li style="margin-bottom:0.5rem;">Verify ownership (DNS TXT record or HTML file upload)</li>
+        <li style="margin-bottom:0.5rem;">Submit sitemap: <code style="color:var(--red);">https://furdbase.ng/sitemap-index.xml</code></li>
+        <li>Check indexing status after 24-48 hours</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <h3>Google Business Profile</h3>
+      </div>
+      <p>This is how you appear on Google Maps and local search results. Without it, you will not rank for &ldquo;architect Abuja&rdquo; geographically.</p>
+      <ul style="margin-top:1rem;">
+        <li>Go to google.com/business</li>
+        <li>Register FURD BASE with your Abuja office address</li>
+        <li>Select category: <strong style="color:white;">Architect</strong> or <strong style="color:white;">Architecture Firm</strong></li>
+        <li>Add phone, website, and 5+ project photos</li>
+        <li>Request 5 reviews from friends/clients</li>
+        <li>Post a weekly update (project progress, blog link, or photo)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+        </div>
+        <h3>Business Directories (Nigeria)</h3>
+      </div>
+      <p>Get listed on these free directories to build backlinks and appear in local searches:</p>
+      <ul style="margin-top:0.75rem;">
+        <li>VConnect (vconnect.com)</li>
+        <li>Nigeria Business Directory (businesslist.com.ng)</li>
+        <li>Hotfrog Nigeria</li>
+        <li>Yellow Pages Nigeria</li>
+        <li>Finelib.com</li>
+      </ul>
+      <p style="margin-top:0.75rem;font-size:0.8rem;color:var(--gray);">Use consistent NAP (Name, Address, Phone) across all listings.</p>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-box">
+        <div class="kpi-value">30d</div>
+        <div class="kpi-label">Time to first Google index</div>
+        <div class="kpi-desc">After Search Console submission</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-value">3</div>
+        <div class="kpi-label">Target Keywords in Top 50</div>
+        <div class="kpi-desc">&ldquo;architect Abuja&rdquo;, &ldquo;furdbase&rdquo;, &ldquo;luxury builder Nigeria&rdquo;</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-value">10+</div>
+        <div class="kpi-label">Business Profile Reviews</div>
+        <div class="kpi-desc">Google reviews by end of month 1</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-value">20+</div>
+        <div class="kpi-label">Directory Listings</div>
+        <div class="kpi-desc">Across Nigerian &amp; global directories</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ======================================================== SECTION 2 -->
+  <section id="s2">
+    <div class="section-number">02</div>
+    <h2 class="section-title">LinkedIn Strategy</h2>
+    <p class="section-sub">Turning your LinkedIn Company Page into a lead-generation engine for architecture and engineering clients.</p>
+
+    <div class="card highlight">
+      <div class="card-header">
+        <div class="card-icon is-checked">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <h3>Already Done</h3>
+      </div>
+      <ul>
+        <li>LinkedIn URL linked across site: <code>/company/furd-base/</code></li>
+        <li>Icon in header, footer (all 8 pages), and contact section</li>
+        <li>JSON-LD references LinkedIn in <code>sameAs</code></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 17H7v-2h10v2zm-6-6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+        </div>
+        <h3>Company Page Profile Fields</h3>
+      </div>
+      <table>
+        <tr><th style="width:30%;">Field</th><th>Content</th></tr>
+        <tr><td>Page Name</td><td>FURD BASE</td></tr>
+        <tr><td>Tagline</td><td>Luxury Architecture, Engineering &amp; Real Estate &mdash; Nigeria &amp; UAE</td></tr>
+        <tr><td>About</td><td>High-end luxury architecture, civil engineering, and real estate development firm operating across Nigeria and the UAE. Headquartered in Abuja with a regional office in Dubai. We deliver landmark residential and commercial developments.</td></tr>
+        <tr><td>Website</td><td>https://furdbase.ng</td></tr>
+        <tr><td>Industry</td><td>Architecture &amp; Planning</td></tr>
+        <tr><td>Company Size</td><td>2-10 employees</td></tr>
+        <tr><td>Locations</td><td>Abuja, Nigeria &bull; Dubai, UAE</td></tr>
+        <tr><td>Specialties</td><td>Luxury Architecture, Structural Engineering, Civil Engineering, Real Estate Development, Project Management</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 6h-2v3h-2V6h-2V4h2V1h2v3h2v2zm-10-2H3v2h8V4zm0 4H3v2h8V8zm0 4H3v2h8v-2z"/></svg>
+        </div>
+        <h3>Posting Schedule</h3>
+      </div>
+      <p style="margin-bottom:1rem;">Post <strong style="color:white;">3 times per week</strong>. Rotate these formats:</p>
+
+      <div class="freq-grid">
+        <span class="freq-label">Monday</span>
+        <span class="freq-desc"><strong style="color:white;">Project spotlight</strong> &mdash; One image from the site + 2-sentence project description. Tag the location.</span>
+        <span class="freq-label">Wednesday</span>
+        <span class="freq-desc"><strong style="color:white;">Blog post share</strong> &mdash; Link to your latest article with a 1-line hook.</span>
+        <span class="freq-label">Friday</span>
+        <span class="freq-desc"><strong style="color:white;">Behind-the-scenes</strong> &mdash; Video clip, sketch, team photo, or construction progress shot.</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <h3>Network Building</h3>
+      </div>
+      <ul>
+        <li>Connect with <strong style="color:white;">30+ people per week</strong> in: real estate, architecture, construction, property development in Nigeria &amp; UAE</li>
+        <li>Send a personalised connection note: <em style="color:var(--gray);">&ldquo;Hi [Name], I came across your profile and wanted to connect. I lead FURD BASE &mdash; we do luxury architecture and engineering across Nigeria and the UAE. Would love to follow your work.&rdquo;</em></li>
+        <li>Engage with 5 posts daily (like + thoughtful comment)</li>
+        <li>Join LinkedIn Groups: Nigerian Architects, Real Estate Investors Africa, Construction Industry Nigeria</li>
+      </ul>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-box">
+        <div class="kpi-value">500+</div>
+        <div class="kpi-label">Connections</div>
+        <div class="kpi-desc">End of month 1</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-value">12</div>
+        <div class="kpi-label">Posts per Month</div>
+        <div class="kpi-desc">3 per week &times; 4 weeks</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-value">50+</div>
+        <div class="kpi-label">Post Engagements</div>
+        <div class="kpi-desc">Likes + comments per month</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-value">5+</div>
+        <div class="kpi-label">Inbound Inquiries</div>
+        <div class="kpi-desc">Messages from LinkedIn per month</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ======================================================== SECTION 3 -->
+  <section id="s3">
+    <div class="section-number">03</div>
+    <h2 class="section-title">Content Engine</h2>
+    <p class="section-sub">Blog posts, project updates, and on-site content that drives organic traffic and gives you ammunition for LinkedIn, WhatsApp, and email.</p>
+
+    <div class="card highlight">
+      <div class="card-header">
+        <div class="card-icon is-checked">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <h3>Already Done</h3>
+      </div>
+      <ul>
+        <li>Blog system with Astro Content Collections</li>
+        <li>4 published posts on architecture, engineering, construction</li>
+        <li>Blog listing page + individual post pages with prev/next nav</li>
+        <li>About page + Services page with detailed content</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l4.59-4.58L18 11l-6 6z"/></svg>
+        </div>
+        <h3>Content Cadence</h3>
+      </div>
+
+      <div class="freq-grid">
+        <span class="freq-label">2 &times; week</span>
+        <span class="freq-desc"><strong style="color:white;">Blog post</strong> &mdash; 800-1,000 words, targeting one keyword. Include images from the project gallery.</span>
+        <span class="freq-label">Monthly</span>
+        <span class="freq-desc"><strong style="color:white;">Project Matrix update</strong> &mdash; Add a new project or update an existing one with fresh photos.</span>
+        <span class="freq-label">Quarterly</span>
+        <span class="freq-desc"><strong style="color:white;">Review Search Console</strong> &mdash; Check which keywords are ranking, adjust content strategy.</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4h-2v-4H9V9h4V5h2v4h4v2z"/></svg>
+        </div>
+        <h3>Blog Topics to Write Next</h3>
+      </div>
+      <ol style="padding-left:1.25rem;color:#c0c0c0;font-size:0.9rem;font-weight:300;">
+        <li style="margin-bottom:0.5rem;"><strong style="color:white;">&ldquo;How Much Does It Cost to Build a Luxury Home in Abuja in 2026?&rdquo;</strong> &mdash; Targets high-intent searchers</li>
+        <li style="margin-bottom:0.5rem;"><strong style="color:white;">&ldquo;The Best Neighborhoods in Abuja for Luxury Real Estate Development&rdquo;</strong> &mdash; Local SEO gold</li>
+        <li style="margin-bottom:0.5rem;"><strong style="color:white;">&ldquo;Architect vs. Engineer: Who Do You Need First?&rdquo;</strong> &mdash; Educational, shareable</li>
+        <li style="margin-bottom:0.5rem;"><strong style="color:white;">&ldquo;Why Dubai Real Estate Investors Are Looking at Nigeria&rdquo;</strong> &mdash; Bridges your UAE &amp; Nigeria narrative</li>
+        <li><strong style="color:white;">&ldquo;5 Buildings Defining Modern Nigerian Architecture&rdquo;</strong> &mdash; Listicle format, highly shareable</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <h3>How to Add a New Blog Post</h3>
+      </div>
+      <ol style="padding-left:1.25rem;color:#c0c0c0;font-size:0.9rem;font-weight:300;">
+        <li style="margin-bottom:0.4rem;">Create a <code style="color:var(--red);">.md</code> file in <code style="color:var(--red);">src/content/blog/</code></li>
+        <li style="margin-bottom:0.4rem;">Add frontmatter: <code style="color:var(--red);">title</code>, <code style="color:var(--red);">description</code>, <code style="color:var(--red);">pubDate</code>, <code style="color:var(--red);">image</code>, <code style="color:var(--red);">tags</code></li>
+        <li style="margin-bottom:0.4rem;">Write the body in Markdown</li>
+        <li style="margin-bottom:0.4rem;">Rebuild: <code style="color:var(--red);">npm run build</code></li>
+        <li>Post link on LinkedIn, WhatsApp, and include in next email</li>
+      </ol>
+      <div class="quote">Every blog post is a piece of SEO fuel AND a LinkedIn post AND a WhatsApp share. One write-up, three distributions.</div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-box">
+        <div class="kpi-value">8+</div>
+        <div class="kpi-label">Blog Posts per Month</div>
+        <div class="kpi-desc">2 per week</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-value">500+</div>
+        <div class="kpi-label">Monthly Page Views</div>
+        <div class="kpi-desc">After 60 days of consistent posting</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-value">1 New</div>
+        <div class="kpi-label">Project per Month</div>
+        <div class="kpi-desc">Added to Project Matrix</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-value">3</div>
+        <div class="kpi-label">Keywords in Top 20</div>
+        <div class="kpi-desc">After 3 months of content publishing</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ======================================================== SECTION 4 -->
+  <section id="s4">
+    <div class="section-number">04</div>
+    <h2 class="section-title">Word of Mouth &amp; Friends</h2>
+    <p class="section-sub">Your network is your fastest distribution channel. Here is exactly what to ask them to do.</p>
+
+    <div class="card highlight">
+      <div class="card-header">
+        <div class="card-icon is-checked">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <h3>Ready-to-Share Message</h3>
+      </div>
+      <p style="margin-bottom:0.75rem;">Give this exact text to friends, family, and professional contacts:</p>
+      <div class="quote" style="font-style:normal;">
+        &ldquo;Check out FURD BASE &mdash; architecture and engineering firm operating in Nigeria and UAE. They are doing impressive luxury projects in Abuja and Dubai. furdbase.ng&rdquo;
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+        </div>
+        <h3>Actions Your Friends Can Take</h3>
+      </div>
+      <table>
+        <tr><th style="width:35%;">Action</th><th>Where</th><th>Impact</th></tr>
+        <tr><td>Share the site link</td><td>WhatsApp groups (real estate, church, alumni, professional)</td><td><span class="tag tag-red">Direct traffic</span></td></tr>
+        <tr><td>Post about FURD BASE</td><td>Their own LinkedIn or Facebook</td><td><span class="tag tag-red">Social proof</span></td></tr>
+        <tr><td>Leave a review</td><td>Google Business Profile</td><td><span class="tag tag-green">Local SEO</span></td></tr>
+        <tr><td>Introduce you</td><td>A contact in real estate / construction</td><td><span class="tag tag-red">Warm referral</span></td></tr>
+        <tr><td>Endorse skills</td><td>Your personal LinkedIn profile</td><td><span class="tag tag-gray">Profile strength</span></td></tr>
+        <tr><td>Mention FURD BASE</td><td>In conversations when someone asks &ldquo;know any good architects?&rdquo;</td><td><span class="tag tag-green">Referral</span></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12z"/></svg>
+        </div>
+        <h3>Google Review Script</h3>
+      </div>
+      <p style="margin-bottom:0.75rem;">Send this to 5 trusted contacts:</p>
+      <div class="quote" style="font-style:normal;">
+        &ldquo;Hi [Name], could you do me a quick favour? Please leave a Google review for FURD BASE. It takes 2 minutes and helps us show up in search results. Here is the link: <span style="color:var(--red);">search.google.com/local/reviews?placeid=YOUR_PLACE_ID</span>. Thank you!&rdquo;
+      </div>
+      <p style="margin-top:0.75rem;font-size:0.8rem;color:var(--gray);">Get the <code>placeid</code> from your Google Business Profile dashboard once created.</p>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-box">
+        <div class="kpi-value">5</div>
+        <div class="kpi-label">Google Reviews</div>
+        <div class="kpi-desc">Collected in first week</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-value">5</div>
+        <div class="kpi-label">WhatApp Shares</div>
+        <div class="kpi-desc">Friends share site to their groups</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-value">3</div>
+        <div class="kpi-label">LinkedIn Shares</div>
+        <div class="kpi-desc">Friends share your post/link</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-value">2</div>
+        <div class="kpi-label">Referrals</div>
+        <div class="kpi-desc">Qualified introductions per month</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ======================================================== SECTION 5 -->
+  <section id="s5">
+    <div class="section-number">05</div>
+    <h2 class="section-title">One-Week Launch Sprint</h2>
+    <p class="section-sub">The first 7 days to get the flywheel spinning. Do these in order.</p>
+
+    <div class="timeline">
+      <div class="timeline-item completed">
+        <span class="day">Day 1</span>
+        <h4>Foundation Setup</h4>
+        <p>Create Google Business Profile. Submit sitemap to Google Search Console. Complete LinkedIn Company Page fields.</p>
+      </div>
+      <div class="timeline-item completed">
+        <span class="day">Day 2</span>
+        <h4>First LinkedIn Post + Network</h4>
+        <p>Publish your first post (project spotlight with image). Send 20 connection requests to real estate/architecture professionals in Abuja.</p>
+      </div>
+      <div class="timeline-item completed">
+        <span class="day">Day 3</span>
+        <h4>Publish Blog Post</h4>
+        <p>Write and publish a new blog post (800-1,000 words). Share it on LinkedIn immediately after.</p>
+      </div>
+      <div class="timeline-item completed">
+        <span class="day">Day 4</span>
+        <h4>Activate Your Network</h4>
+        <p>Ask 3 friends to: (1) leave a Google review, (2) share the site in one WhatsApp group, (3) connect on LinkedIn and engage with your posts.</p>
+      </div>
+      <div class="timeline-item completed">
+        <span class="day">Day 5</span>
+        <h4>Deepen LinkedIn</h4>
+        <p>Connect with 20 more people. Engage with 10 posts (like + comment). Join 2 LinkedIn Groups.</p>
+      </div>
+      <div class="timeline-item completed">
+        <span class="day">Day 6</span>
+        <h4>Publish Blog Post + Directory Listings</h4>
+        <p>Publish blog post #2. Register on 3 Nigerian business directories.</p>
+      </div>
+      <div class="timeline-item completed">
+        <span class="day">Day 7</span>
+        <h4>Review &amp; Plan</h4>
+        <p>Check Google Search Console &mdash; verify pages are indexed. Check LinkedIn analytics. Plan next week&rsquo;s 2 blog posts. Check KPI dashboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ======================================================== SECTION 6 -->
+  <section id="s6">
+    <div class="section-number">06</div>
+    <h2 class="section-title">KPI Dashboard</h2>
+    <p class="section-sub">These are the numbers that matter. Review weekly.</p>
+
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>KPI</th>
+          <th>Target (Month 1)</th>
+          <th>Target (Month 3)</th>
+          <th>Owner</th>
+        </tr>
+        <tr>
+          <td rowspan="3" style="color:var(--red);font-weight:500;">SEO</td>
+          <td>Google indexed pages</td>
+          <td>8</td>
+          <td>20+</td>
+          <td>H.O.M</td>
+        </tr>
+        <tr>
+          <td>Keywords in Google Top 50</td>
+          <td>3</td>
+          <td>10</td>
+          <td>H.O.M</td>
+        </tr>
+        <tr>
+          <td>Google Business Profile reviews</td>
+          <td>5</td>
+          <td>15</td>
+          <td>H.O.M</td>
+        </tr>
+        <tr>
+          <td rowspan="3" style="color:var(--red);font-weight:500;">LinkedIn</td>
+          <td>Connections</td>
+          <td>500</td>
+          <td>1,500</td>
+          <td>H.O.M</td>
+        </tr>
+        <tr>
+          <td>Posts published</td>
+          <td>12</td>
+          <td>36</td>
+          <td>H.O.M</td>
+        </tr>
+        <tr>
+          <td>Inbound inquiries</td>
+          <td>5</td>
+          <td>15</td>
+          <td>H.O.M</td>
+        </tr>
+        <tr>
+          <td rowspan="3" style="color:var(--red);font-weight:500;">Content</td>
+          <td>Blog posts published</td>
+          <td>8</td>
+          <td>24</td>
+          <td>H.O.M</td>
+        </tr>
+        <tr>
+          <td>Monthly site visitors</td>
+          <td>200</td>
+          <td>1,000</td>
+          <td>H.O.M</td>
+        </tr>
+        <tr>
+          <td>New projects added to site</td>
+          <td>1</td>
+          <td>4</td>
+          <td>H.O.M</td>
+        </tr>
+        <tr>
+          <td rowspan="2" style="color:var(--red);font-weight:500;">Network</td>
+          <td>Google reviews from network</td>
+          <td>5</td>
+          <td>20</td>
+          <td>H.O.M</td>
+        </tr>
+        <tr>
+          <td>Warm referrals</td>
+          <td>2</td>
+          <td>8</td>
+          <td>H.O.M</td>
+        </tr>
+        <tr>
+          <td style="color:var(--red);font-weight:500;">Revenue</td>
+          <td>Projects from digital channels</td>
+          <td>0</td>
+          <td>1</td>
+          <td>Principal</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top:2rem;">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/></svg>
+        </div>
+        <h3>Tools to Track Everything</h3>
+      </div>
+      <ul>
+        <li><strong style="color:white;">Google Search Console</strong> &mdash; Keywords, indexing, crawl errors (free)</li>
+        <li><strong style="color:white;">Google Analytics</strong> &mdash; Site visitors, pages, traffic sources (free) <span class="tag tag-red">Not yet installed</span></li>
+        <li><strong style="color:white;">LinkedIn Analytics</strong> &mdash; Post impressions, engagement, followers (built into company page)</li>
+        <li><strong style="color:white;">Google Business Profile Insights</strong> &mdash; Search views, map views, direction requests (built in)</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- ============================================================ FOOTER -->
+  <div style="height:4rem;"></div>
+
+</div>
+
+<footer class="footer">
+  <img src="/assets/FURD-BASE-main-logo.png" alt="" style="height:24px;opacity:0.3;margin-bottom:0.75rem;">
+  <br>
+  FURD BASE &mdash; Digital Visibility Playbook &bull; Version 1.0 &bull; July 2026
+  <br>
+  <span>Nigeria | UAE</span>
+</footer>
+
+</body>
+</html>

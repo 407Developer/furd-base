@@ -1,0 +1,315 @@
+---
+// ProjectMatrix.astro
+
+const ngFlag = `<svg class="inline-block w-5 h-3.5 rounded-[2px] shadow-sm" viewBox="0 0 10 7" xmlns="http://www.w3.org/2000/svg"><rect width="10" height="7" fill="#fff"/><rect width="3.33" height="7" fill="#008751"/><rect x="6.67" width="3.33" height="7" fill="#008751"/></svg>`;
+const aeFlag = `<svg class="inline-block w-5 h-3.5 rounded-[2px] shadow-sm" viewBox="0 0 10 7" xmlns="http://www.w3.org/2000/svg"><rect width="10" height="7" fill="#fff"/><rect width="10" height="2.33" fill="#00732f"/><rect y="4.67" width="10" height="2.33" fill="#000"/><rect width="2.5" height="7" fill="#ce1127"/></svg>`;
+
+const flagMap = { NG: ngFlag, AE: aeFlag };
+const countryNameMap = { NG: 'Nigeria', AE: 'UAE' };
+
+const projects = [
+  {
+    id: 1,
+    title: "The Zenith Pavilion",
+    subtitle: "Modern Luxury Residential",
+    location: "CBD, Abuja",
+    country: "NG",
+    area: "580 M²",
+    structure: "Post-Tensioned Concrete Slab",
+    timeline: "16 Months (Completed)",
+    image: "/assets/3d-2.jpeg",
+    blueprint: "/assets/3d-8.jpeg",
+    description: "A premium multi-family residential building designed to withstand the tropical climate of Abuja while maintaining maximum glass exposure and visual weightlessness.",
+    details: [
+      { label: "Foundation", value: "Raft Foundation (1.2m Depth)" },
+      { label: "Facade", value: "Double Glazed Low-E Glass" },
+      { label: "Engineering Standard", value: "Eurocode 2 Compliance" }
+    ]
+  },
+  {
+    id: 2,
+    title: "Centennial Heights",
+    subtitle: "Eco-Friendly Organic Villa",
+    location: "Maitama Hills, Abuja",
+    country: "NG",
+    area: "820 M²",
+    structure: "Composite Steel-Concrete Frame",
+    timeline: "20 Months (In Construction)",
+    image: "/assets/3d-4.jpeg",
+    blueprint: "/assets/3d-5.jpeg",
+    description: "An architectural marvel cantilevered over Maitama Hills, incorporating smart ventilation, greywater recycling, and geothermal floor cooling systems.",
+    details: [
+      { label: "Foundation", value: "Piled Foundation with Ground Beams" },
+      { label: "Cantilever Span", value: "4.8m Architectural Projection" },
+      { label: "Power Grid", value: "30kW Integrated Solar Slate Roof" }
+    ]
+  },
+  {
+    id: 3,
+    title: "The Obsidian Oasis",
+    subtitle: "Minimalist Waterfront Estate",
+    location: "Lekki Peninsula, Lagos",
+    country: "NG",
+    area: "420 M²",
+    structure: "Reinforced Concrete Frame",
+    timeline: "12 Months (Completed)",
+    image: "/assets/3d-6.jpeg",
+    blueprint: "/assets/3d-7.jpeg",
+    description: "Designed for a high-saline coastal environment, featuring corrosion-proof structural reinforcements and deep overhang shading structures.",
+    details: [
+      { label: "Foundation", value: "Precast Concrete Pile System" },
+      { label: "Structural Steel", value: "HDG (Hot-Dip Galvanized)" },
+      { label: "Storm Protection", value: "Grade 5 Hurricane Resistance" }
+    ]
+  },
+  {
+    id: 4,
+    title: "The Crescent Tower",
+    subtitle: "Luxury Mixed-Use High-Rise",
+    location: "Dubai Marina, UAE",
+    country: "AE",
+    area: "12,400 M²",
+    structure: "Composite Steel-Reinforced Concrete Core",
+    timeline: "24 Months (Design Phase)",
+    image: "/assets/3d-3.jpeg",
+    blueprint: "/assets/3d-5.jpeg",
+    description: "A landmark 22-storey mixed-use tower in Dubai Marina featuring a double-skin facade, sky garden at Level 14, and basement parking over four levels. Designed to LEED Gold标准和Eurocode 2.",
+    details: [
+      { label: "Facade System", value: "Unitized Double-Skin Curtain Wall" },
+      { label: "Core Design", value: "RC Core with Outrigger Systems" },
+      { label: "Sustainability", value: "LEED Gold Target / PV Ready Roof" }
+    ]
+  }
+];
+---
+
+<section id="projects" class="py-24 md:py-32 bg-brand-charcoal relative">
+  <!-- Grid Accent Background -->
+  <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="mb-20 max-w-2xl">
+      <span class="font-display text-xs md:text-sm tracking-[0.3em] uppercase text-brand-red font-semibold mb-3 block">
+        Structural Engineering
+      </span>
+      <h2 class="font-serif text-4xl md:text-5xl font-bold text-white tracking-tight uppercase mb-6">
+        Project Matrix
+      </h2>
+      <p class="text-brand-gray font-light text-sm md:text-base">
+        Explore our portfolio treated as technical engineering case studies. Every development proves our core competence in structural integrity, material longevity, and architectural execution.
+      </p>
+    </div>
+
+    <!-- Case Studies List -->
+    <div class="flex flex-col gap-16 md:gap-24">
+      {projects.map((project, idx) => (
+        <div 
+          class={`flex flex-col lg:flex-row gap-8 lg:gap-16 items-stretch case-study-row`}
+          data-id={project.id}
+        >
+          <!-- Project Info Panel (Left on alternate, right on others) -->
+          <div class={`flex-1 flex flex-col justify-between order-2 ${idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+            <div>
+              <!-- Project Header -->
+              <div class="flex items-center gap-4 mb-4">
+                <span class="font-condensed text-5xl font-bold text-brand-red/30">0{project.id}</span>
+                <div class="flex-1">
+                  <span class="text-xs uppercase tracking-widest text-brand-gray">{project.subtitle}</span>
+                  <h3 class="font-serif text-2xl md:text-3xl font-bold text-white mt-0.5">{project.title}</h3>
+                </div>
+                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded border border-white/10 bg-brand-dark/60 text-[10px] uppercase tracking-wider font-semibold text-white/70 whitespace-nowrap" set:html={`${flagMap[project.country]} <span class="ml-1.5">${countryNameMap[project.country]}</span>`}>
+                </div>
+              </div>
+
+              <!-- Case Study Overview -->
+              <p class="text-brand-gray text-sm md:text-base font-light leading-relaxed mb-8">
+                {project.description}
+              </p>
+
+              <!-- Technical Engineering Metrics Table (Requested) -->
+              <div class="border border-white/10 rounded-lg overflow-hidden mb-8">
+                <div class="grid grid-cols-2 border-b border-white/5 bg-white/[0.01]">
+                  <div class="p-4 border-r border-white/5">
+                    <span class="block text-[10px] uppercase text-brand-gray tracking-wider">Location</span>
+                    <span class="font-sans font-semibold text-white text-sm">{project.location}</span>
+                  </div>
+                  <div class="p-4">
+                    <span class="block text-[10px] uppercase text-brand-gray tracking-wider">Gross Area</span>
+                    <span class="font-sans font-semibold text-white text-sm">{project.area}</span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2">
+                  <div class="p-4 border-r border-white/5">
+                    <span class="block text-[10px] uppercase text-brand-gray tracking-wider">Structural Type</span>
+                    <span class="font-sans font-semibold text-white text-sm">{project.structure}</span>
+                  </div>
+                  <div class="p-4">
+                    <span class="block text-[10px] uppercase text-brand-gray tracking-wider">Timeline</span>
+                    <span class="font-sans font-semibold text-white text-sm">{project.timeline}</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Details/Structural Spec list -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {project.details.map((detail) => (
+                  <div class="bg-brand-dark/40 border border-white/5 p-4 rounded text-left">
+                    <span class="block text-[9px] uppercase tracking-wider text-brand-gray mb-1">{detail.label}</span>
+                    <span class="text-xs font-medium text-white/90">{detail.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- Action Button -->
+            <div class="mt-10">
+              <button 
+                class="view-details-btn inline-flex items-center gap-3 text-xs uppercase tracking-widest font-semibold text-white hover:text-brand-red transition-colors duration-300"
+                data-target={project.id}
+              >
+                View Detailed Blueprints
+                <span class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:border-brand-red transition-all">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Image / Interactive Tab Display (Right on alternate, left on others) -->
+          <div class={`flex-1 relative rounded-xl overflow-hidden min-h-[350px] md:min-h-[450px] border border-white/10 shadow-xl order-1 ${idx % 2 === 0 ? 'lg:order-2' : 'lg:order-1'} group`}>
+            
+            <!-- Default Render Image -->
+            <div class="absolute inset-0 z-0 transition-transform duration-700 group-hover:scale-105" id={`render-img-${project.id}`}>
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
+            </div>
+
+            <!-- Technical Detail Overlay (revealed on button toggle) -->
+            <div 
+              class="absolute inset-0 z-10 bg-brand-dark/95 flex flex-col justify-between p-6 opacity-0 pointer-events-none transition-all duration-500 transform translate-y-4"
+              id={`blueprint-panel-${project.id}`}
+            >
+              <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                <h4 class="font-serif text-lg font-bold text-white uppercase tracking-wider">Structural Schematics</h4>
+                <button 
+                  class="close-blueprint-btn text-brand-gray hover:text-white"
+                  data-target={project.id}
+                >
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Blueprint / structural mockup image -->
+              <div class="flex-1 my-4 rounded border border-white/5 overflow-hidden bg-brand-charcoal relative">
+                <img 
+                  src={project.blueprint} 
+                  alt="Technical Blueprint" 
+                  class="w-full h-full object-cover mix-blend-lighten opacity-80 filter grayscale sepia hue-rotate-[190deg] saturate-200"
+                />
+              </div>
+
+              <div class="text-xs text-brand-gray flex justify-between">
+                <span>Drawing Ref: FB-DET-{project.id}04</span>
+                <span>Scale: 1:150 @ A3</span>
+              </div>
+            </div>
+            
+            <!-- Country Flag Badge on Image -->
+            <div class="absolute top-4 left-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded bg-brand-dark/80 backdrop-blur border border-white/10 text-[10px] uppercase tracking-wider font-semibold text-white/70" set:html={`${flagMap[project.country]} <span class="ml-1.5">${countryNameMap[project.country]}</span>`}>
+            </div>
+
+            <!-- Quick View Toggle Buttons -->
+            <div class="absolute top-4 right-4 z-20 flex gap-2">
+              <button 
+                class="img-mode-btn bg-brand-dark/80 hover:bg-brand-red text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded backdrop-blur border border-white/10 active-btn"
+                data-id={project.id}
+                data-mode="render"
+              >
+                Render
+              </button>
+              <button 
+                class="img-mode-btn bg-brand-dark/80 hover:bg-brand-red text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded backdrop-blur border border-white/10"
+                data-id={project.id}
+                data-mode="blueprint"
+              >
+                Structural Detail
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .active-btn {
+    background-color: var(--color-brand-red) !important;
+    border-color: var(--color-brand-red) !important;
+  }
+</style>
+
+<script>
+  // Add interactive display controls for renders vs structural blueprints
+  const viewDetailBtns = document.querySelectorAll('.view-details-btn');
+  const closeBlueprintBtns = document.querySelectorAll('.close-blueprint-btn');
+  const imgModeBtns = document.querySelectorAll('.img-mode-btn');
+
+  // Toggle blueprint panel
+  viewDetailBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const panel = document.getElementById(`blueprint-panel-${targetId}`);
+      if (panel) {
+        panel.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+        panel.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      }
+    });
+  });
+
+  closeBlueprintBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const panel = document.getElementById(`blueprint-panel-${targetId}`);
+      if (panel) {
+        panel.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+        panel.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      }
+    });
+  });
+
+  // Tab controls for Render / Structural Detail button triggers
+  imgModeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-id');
+      const mode = btn.getAttribute('data-mode');
+      const panel = document.getElementById(`blueprint-panel-${id}`);
+      
+      // Update button highlights
+      const rowButtons = document.querySelectorAll(`.img-mode-btn[data-id="${id}"]`);
+      rowButtons.forEach(b => b.classList.remove('active-btn'));
+      btn.classList.add('active-btn');
+
+      if (panel) {
+        if (mode === 'blueprint') {
+          panel.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+          panel.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        } else {
+          panel.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+          panel.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        }
+      }
+    });
+  });
+</script>

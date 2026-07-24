@@ -1,0 +1,360 @@
+---
+// Hero.astro
+
+const slides = [
+  {
+    lines: ["THE INFINITE", "PRECISION OF", "LIVING."],
+    type: "video", src: "/assets/furd_base_promo-1.mp4"
+  },
+  {
+    lines: ["ARCHITECTURE IS", "THE ART OF", "STRUCTURE."],
+    type: "video", src: "/assets/furd_base_promo-2.mp4"
+  },
+  {
+    lines: ["ENGINEERING THE", "EXTRAORDINARY."],
+    type: "image", src: "/assets/3d-2.jpeg"
+  },
+  {
+    lines: ["WHERE VISION", "MEETS", "VERTICALITY."],
+    type: "video", src: "/assets/furd_base_promo-3.mp4"
+  },
+  {
+    lines: ["LUXURY IS IN THE", "LOAD-BEARING", "DETAILS."],
+    type: "image", src: "/assets/real-1.jpeg"
+  },
+  {
+    lines: ["WE BUILD WHAT", "OTHERS ONLY", "IMAGINE."],
+    type: "video", src: "/assets/3d-video.mp4"
+  },
+  {
+    lines: ["CONCRETE.", "STEEL.", "AMBITION."],
+    type: "image", src: "/assets/3d-4.jpeg"
+  },
+  {
+    lines: ["FROM BLUEPRINT", "TO LANDMARK."],
+    type: "image", src: "/assets/real-2.jpeg"
+  },
+  {
+    lines: ["THE FOUNDATION", "OF MODERN", "LUXURY."],
+    type: "image", src: "/assets/3d-6.jpeg"
+  },
+  {
+    lines: ["PRECISION.", "PERFORMANCE.", "PRESENCE."],
+    type: "video", src: "/assets/furd_base_promo-1.mp4"
+  },
+  {
+    lines: ["YOUR LEGACY.", "OUR", "BLUEPRINT."],
+    type: "image", src: "/assets/3d-3.jpeg"
+  },
+  {
+    lines: ["DESIGN WITHOUT", "COMPROMISE."],
+    type: "image", src: "/assets/3d-5.jpeg"
+  },
+  {
+    lines: ["BUILDING BEYOND", "BOUNDARIES."],
+    type: "image", src: "/assets/3d-7.jpeg"
+  },
+  {
+    lines: ["WHERE STRUCTURE", "MEETS SOUL."],
+    type: "video", src: "/assets/furd_base_promo-2.mp4"
+  },
+  {
+    lines: ["ELEVATING THE", "EVERYDAY."],
+    type: "image", src: "/assets/3d-8.jpeg"
+  },
+  {
+    lines: ["THE ARCHITECTURE", "OF AMBITION."],
+    type: "image", src: "/assets/real-1.jpeg"
+  },
+  {
+    lines: ["CRAFTING", "LANDMARKS.", "NIGERIA & UAE."],
+    type: "image", src: "/assets/3d-2.jpeg"
+  },
+  {
+    lines: ["STRENGTH IN", "EVERY SPAN."],
+    type: "video", src: "/assets/furd_base_promo-3.mp4"
+  },
+  {
+    lines: ["INFRASTRUCTURE", "FOR THE", "FUTURE."],
+    type: "image", src: "/assets/3d-4.jpeg"
+  },
+  {
+    lines: ["REDEFINING THE", "NIGERIAN", "SKYLINE."],
+    type: "video", src: "/assets/3d-video.mp4"
+  },
+];
+---
+
+<section class="relative h-screen w-full overflow-hidden bg-brand-dark flex flex-col justify-between">
+  <!-- Background Slides -->
+  <div class="absolute inset-0 z-0">
+    {slides.map((slide, i) => (
+      slide.type === "video" ? (
+        <video
+          autoplay loop muted playsinline
+          class={`w-full h-full object-cover opacity-60 scale-105 absolute inset-0 transition-opacity duration-1000 ${i === 0 ? 'opacity-60' : 'opacity-0'}`}
+          id={`hero-bg-${i}`}
+          data-slide={i}
+        >
+          <source src={slide.src} type="video/mp4" />
+        </video>
+      ) : (
+        <img
+          src={slide.src}
+          alt=""
+          class={`w-full h-full object-cover opacity-60 scale-105 absolute inset-0 transition-opacity duration-1000 ${i === 0 ? 'opacity-60' : 'opacity-0'}`}
+          id={`hero-bg-${i}`}
+          data-slide={i}
+          loading="lazy"
+        />
+      )
+    ))}
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/30 to-brand-dark/70 z-[1]"></div>
+  </div>
+
+  <!-- Scanning Line -->
+  <div class="absolute inset-0 z-[5] pointer-events-none opacity-30">
+    <div class="scan-line"></div>
+  </div>
+
+  <!-- Grid Lines -->
+  <div class="absolute inset-0 pointer-events-none z-10 flex justify-between px-6 max-w-7xl mx-auto opacity-5">
+    <div class="w-[1px] h-full bg-white"></div>
+    <div class="w-[1px] h-full bg-white hidden md:block"></div>
+    <div class="w-[1px] h-full bg-white hidden md:block"></div>
+    <div class="w-[1px] h-full bg-white hidden md:block"></div>
+    <div class="w-[1px] h-full bg-white"></div>
+  </div>
+
+  <!-- Slide Counter -->
+  <div class="absolute top-28 right-6 md:right-12 z-20 flex items-center gap-2">
+    <span id="slide-counter-current" class="font-condensed text-lg text-white/80">01</span>
+    <span class="text-white/20 font-condensed text-sm">/</span>
+    <span class="font-condensed text-sm text-white/40">{String(slides.length).padStart(2, '0')}</span>
+  </div>
+
+  <div></div>
+
+  <!-- Main Hero Content -->
+  <div class="max-w-7xl mx-auto w-full px-6 z-20 flex flex-col justify-center items-start mt-24 md:mt-28">
+    <!-- Subtitle (static) -->
+    <div class="flex items-center gap-3 mb-8 overflow-hidden">
+      <span class="w-8 h-[1px] bg-brand-red"></span>
+      <span class="font-display text-xs md:text-sm tracking-[0.3em] uppercase text-brand-red font-semibold">
+        Nigeria <span class="text-white/30">|</span> UAE — Redefining Modern Structures
+      </span>
+    </div>
+
+    <!-- Rotating Main Title (CSS Grid overlap — container auto-sizes to tallest) -->
+    <div class="grid grid-cols-1 w-full max-w-5xl mb-10" style="grid-template-rows: min-content;">
+      {slides.map((slide, i) => (
+        <h1
+          class={`font-condensed text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight uppercase text-white select-none row-start-1 col-start-1 transition-all duration-700 ${i === 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 pointer-events-none'}`}
+          id={`hero-title-${i}`}
+          data-slide={i}
+        >
+          {slide.lines.map((line, li) => (
+            <span class="block overflow-hidden" key={li}>
+              <span class={`inline-block ${li === slide.lines.length - 1 ? 'text-brand-red' : li % 2 === 0 ? 'text-white' : 'text-white/70'}`}>
+                {line}
+              </span>
+            </span>
+          ))}
+        </h1>
+      ))}
+    </div>
+
+    <!-- Pill Indicators -->
+    <div class="flex flex-wrap gap-2">
+      <span class="px-3 py-1 rounded-full border border-white/10 text-[10px] uppercase tracking-wider text-brand-gray font-semibold">Nigeria</span>
+      <span class="px-3 py-1 rounded-full border border-white/10 text-[10px] uppercase tracking-wider text-brand-gray font-semibold">UAE</span>
+      <span class="px-3 py-1 rounded-full border border-brand-red/30 bg-brand-red/5 text-[10px] uppercase tracking-wider text-brand-red font-semibold">Eurocode 2</span>
+      <span class="px-3 py-1 rounded-full border border-white/10 text-[10px] uppercase tracking-wider text-brand-gray font-semibold">LEED</span>
+    </div>
+
+    <!-- Progress Dots -->
+    <div class="flex gap-2 mt-8" id="progress-dots">
+      {slides.map((_, i) => (
+        <button
+          class={`w-10 h-[2px] rounded-full transition-all duration-500 ${i === 0 ? 'bg-brand-red w-14' : 'bg-white/20 hover:bg-white/40'}`}
+          data-dot={i}
+          aria-label={`Slide ${i + 1}`}
+        ></button>
+      ))}
+    </div>
+  </div>
+
+  <!-- Bottom Panel -->
+  <div class="max-w-7xl mx-auto w-full px-6 z-20 pb-12 flex flex-col md:flex-row justify-between items-end gap-8">
+    <!-- Specs Panel -->
+    <div class="bg-brand-charcoal/90 backdrop-blur-md border border-white/10 p-6 rounded-lg max-w-sm w-full shadow-2xl relative overflow-hidden group hover:border-brand-red/30 transition-colors duration-500 red-glow">
+      <div class="absolute -right-20 -bottom-20 w-40 h-40 bg-brand-red/10 rounded-full blur-3xl group-hover:bg-brand-red/20 transition-all duration-500"></div>
+      
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-brand-gray">Live Metric</span>
+          <h3 class="font-serif text-lg font-bold text-white mt-0.5">Current Portfolio</h3>
+        </div>
+        <div class="bg-brand-red/10 px-3 py-1 rounded text-[10px] uppercase font-bold text-brand-red tracking-wider">
+          Active
+        </div>
+      </div>
+
+      <!-- Animated Regional Bar Chart -->
+      <div class="flex items-end gap-2 h-28 mb-4">
+        <div class="flex-1 flex flex-col items-center gap-1">
+          <span class="text-[9px] uppercase tracking-wider text-brand-gray">Abuja</span>
+          <div class="w-full bg-brand-red/20 rounded-t relative overflow-hidden flex-1 flex items-end">
+            <div class="w-full bg-gradient-to-t from-brand-red to-brand-red/60 rounded-t animate-bar-grow" style="height: 85%; animation-delay: 0.8s;"></div>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col items-center gap-1">
+          <span class="text-[9px] uppercase tracking-wider text-brand-gray">Lagos</span>
+          <div class="w-full bg-brand-red/20 rounded-t relative overflow-hidden flex-1 flex items-end">
+            <div class="w-full bg-gradient-to-t from-brand-red to-brand-red/60 rounded-t animate-bar-grow" style="height: 65%; animation-delay: 1s;"></div>
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col items-center gap-1">
+          <span class="text-[9px] uppercase tracking-wider text-brand-gray">Dubai</span>
+          <div class="w-full bg-brand-red/20 rounded-t relative overflow-hidden flex-1 flex items-end">
+            <div class="w-full bg-gradient-to-t from-brand-red to-brand-red/60 rounded-t animate-bar-grow" style="height: 55%; animation-delay: 1.2s;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between text-sm">
+        <div>
+          <span class="block text-[10px] uppercase text-brand-gray tracking-wider">Total Projects</span>
+          <span class="font-condensed text-2xl font-bold text-white">12+</span>
+        </div>
+        <div class="text-right">
+          <span class="block text-[10px] uppercase text-brand-gray tracking-wider">Years Active</span>
+          <span class="font-condensed text-2xl font-bold text-white">6+</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Description & CTA -->
+    <div class="max-w-md text-left md:text-right flex flex-col items-start md:items-end">
+      <p class="text-brand-gray text-sm md:text-base leading-relaxed mb-6 font-light">
+        Operating across Nigeria and the UAE, FURD BASE combines rigorous engineering metrics with high-end luxury architecture to deliver landmark residential and commercial developments.
+      </p>
+      
+      <a 
+        href="#showcase" 
+        class="inline-flex items-center gap-3 group text-xs uppercase tracking-[0.2em] font-semibold text-white hover:text-brand-red transition-colors duration-300"
+      >
+        <span>Explore Architecture</span>
+        <span class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:border-brand-red transition-colors duration-300">
+          <svg class="w-3.5 h-3.5 text-white group-hover:text-brand-red transition-colors duration-300 transform group-hover:translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes barGrow {
+    0% { height: 0%; }
+    100% { height: var(--bar-height, 100%); }
+  }
+
+  @keyframes scanMove {
+    0% { top: -10%; }
+    100% { top: 110%; }
+  }
+
+  .animate-bar-grow {
+    animation: barGrow 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    height: 0%;
+  }
+
+  .scan-line {
+    position: absolute;
+    left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(159, 19, 31, 0.4), transparent);
+    animation: scanMove 4s linear infinite;
+    filter: blur(1px);
+  }
+</style>
+
+<script>
+  const TOTAL = 20;
+  let current = 0;
+  let interval = null;
+
+  function goToSlide(idx) {
+    if (idx === current) return;
+    
+    const prev = current;
+    current = idx;
+
+    // Update backgrounds
+    for (let i = 0; i < TOTAL; i++) {
+      const bg = document.getElementById(`hero-bg-${i}`);
+      if (bg) {
+        bg.style.opacity = i === current ? '0.6' : '0';
+        // Resume video if switching to it
+        if (i === current && bg.tagName === 'VIDEO') {
+          bg.play().catch(() => {});
+        }
+      }
+    }
+
+    // Update titles
+    for (let i = 0; i < TOTAL; i++) {
+      const title = document.getElementById(`hero-title-${i}`);
+      if (title) {
+        if (i === current) {
+          title.style.opacity = '1';
+          title.style.transform = 'translateY(0)';
+        } else {
+          title.style.opacity = '0';
+          title.style.transform = i < current ? 'translateY(-12px)' : 'translateY(12px)';
+        }
+      }
+    }
+
+    // Update counter
+    const counter = document.getElementById('slide-counter-current');
+    if (counter) counter.textContent = String(current + 1).padStart(2, '0');
+
+    // Update dots
+    const dots = document.querySelectorAll('[data-dot]');
+    dots.forEach((dot, i) => {
+      if (i === current) {
+        dot.classList.remove('bg-white/20', 'hover:bg-white/40', 'w-10');
+        dot.classList.add('bg-brand-red', 'w-14');
+      } else {
+        dot.classList.remove('bg-brand-red', 'w-14');
+        dot.classList.add('bg-white/20', 'hover:bg-white/40', 'w-10');
+      }
+    });
+  }
+
+  function nextSlide() {
+    goToSlide((current + 1) % TOTAL);
+  }
+
+  // Auto cycle every 6 seconds
+  interval = setInterval(nextSlide, 6000);
+
+  // Clickable dots
+  document.querySelectorAll('[data-dot]').forEach(dot => {
+    dot.addEventListener('click', () => {
+      clearInterval(interval);
+      goToSlide(parseInt(dot.getAttribute('data-dot')));
+      interval = setInterval(nextSlide, 6000);
+    });
+  });
+
+  // Pause on hover
+  const section = document.currentScript?.closest('section');
+  if (section) {
+    section.addEventListener('mouseenter', () => clearInterval(interval));
+    section.addEventListener('mouseleave', () => { interval = setInterval(nextSlide, 6000); });
+  }
+</script>

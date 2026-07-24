@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Outfit:wght@200;300;400;500;600;700;800&family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #9f131f;
+  --color-brand-red-dark: #7d0514;
+  --color-brand-dark: #070708;
+  --color-brand-charcoal: #121214;
+  --color-brand-gray: #8e8e93;
+  --color-brand-light: #f8f9fa;
+  
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-sans: 'Outfit', sans-serif;
+  --font-serif: 'Cinzel', serif;
+  --font-condensed: 'Bebas Neue', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #333336;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-red);
+}
+
+/* Custom styles for luxury layouts */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-dark);
+  color: var(--color-brand-light);
+  overflow-x: hidden;
+}
+
+.luxury-text-gradient {
+  background: linear-gradient(135deg, #ffffff 30%, #a1a1a6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.red-glow {
+  box-shadow: 0 0 40px rgba(159, 19, 31, 0.15);
+}
+
+.clip-path-slider {
+  clip-path: polygon(0 0, var(--clip-pos, 50%) 0, var(--clip-pos, 50%) 100%, 0 100%);
+}

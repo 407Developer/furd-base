@@ -1,0 +1,160 @@
+---
+// RenderReality.astro
+---
+<section id="showcase" class="py-24 md:py-32 bg-brand-dark relative">
+  <!-- Section Title -->
+  <div class="max-w-7xl mx-auto px-6 mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+    <div>
+      <span class="font-display text-xs md:text-sm tracking-[0.3em] uppercase text-brand-red font-semibold mb-3 block">
+        Interactive Showcase
+      </span>
+      <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight uppercase">
+        Render to Reality
+      </h2>
+    </div>
+    <p class="max-w-md text-brand-gray text-sm md:text-base font-light">
+      Drag the interactive slider back and forth to witness the seamless transition from our 3D digital architectural blueprint to the finished, physical luxury estate.
+    </p>
+  </div>
+
+  <!-- Interactive Slider Container -->
+  <div class="max-w-6xl mx-auto px-6">
+    <div 
+      class="relative w-full aspect-[960/432] rounded-xl overflow-hidden border border-white/10 select-none shadow-2xl red-glow group"
+      id="slider-container"
+    >
+      <!-- Base Layer (3D Digital Blueprint / Render) -->
+      <div class="absolute inset-0 bg-brand-charcoal z-0">
+        <img 
+          src="/assets/3d-3.jpeg" 
+          alt="3D Digital Blueprint Render" 
+          class="w-full h-full object-cover"
+          draggable="false"
+        />
+        <!-- Render Label -->
+        <div class="absolute left-6 bottom-6 z-10 bg-brand-dark/80 backdrop-blur-md px-4 py-2 border border-white/10 rounded font-display text-xs uppercase tracking-widest text-brand-gray">
+          3D Digital Blueprint
+        </div>
+      </div>
+
+      <!-- Top Overlay Layer (Finished Building / Reality) -->
+      <div 
+        class="absolute inset-0 z-10 clip-path-slider select-none pointer-events-none"
+        id="slider-overlay"
+        style="--clip-pos: 50%;"
+      >
+        <img 
+          src="/assets/real-1.jpeg" 
+          alt="Finished Physical Building" 
+          class="w-full h-full object-cover"
+          draggable="false"
+        />
+        <!-- Reality Label -->
+        <div class="absolute right-6 bottom-6 z-10 bg-brand-red/90 backdrop-blur-md px-4 py-2 border border-brand-red/30 rounded font-display text-xs uppercase tracking-widest text-white">
+          Finished Physical Structure
+        </div>
+      </div>
+
+      <!-- Drag Handle -->
+      <div 
+        class="absolute top-0 bottom-0 w-1 bg-brand-red cursor-ew-resize z-20"
+        id="slider-handle"
+        style="left: 50%;"
+      >
+        <!-- Center Handle Button -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-brand-red hover:bg-brand-red-dark border-4 border-brand-dark flex items-center justify-between px-2 text-white shadow-2xl transition-transform duration-300 scale-100 hover:scale-110 active:scale-95">
+          <!-- Chevron Left -->
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <!-- Chevron Right -->
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </div>
+        
+        <!-- Top and Bottom vertical arrow guides -->
+        <div class="absolute top-4 left-1/2 -translate-x-1/2 bg-brand-red text-white text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded shadow">
+          Drag
+        </div>
+      </div>
+    </div>
+
+    <!-- Extra Showcase Metadata (Treating like Case Study context) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 bg-brand-charcoal/50 border border-white/5 p-8 rounded-xl backdrop-blur">
+      <div>
+        <span class="block text-xs uppercase tracking-widest text-brand-gray mb-1">Development Location</span>
+        <span class="font-serif text-lg font-bold text-white">Maitama District, Abuja</span>
+      </div>
+      <div>
+        <span class="block text-xs uppercase tracking-widest text-brand-gray mb-1">Structural Type</span>
+        <span class="font-serif text-lg font-bold text-white">Reinforced Concrete Framing</span>
+      </div>
+      <div>
+        <span class="block text-xs uppercase tracking-widest text-brand-gray mb-1">Completion Timeline</span>
+        <span class="font-serif text-lg font-bold text-white">14 Months (Q3 2026)</span>
+      </div>
+      <div>
+        <span class="block text-xs uppercase tracking-widest text-brand-gray mb-1">Architectural Style</span>
+        <span class="font-serif text-lg font-bold text-white">Minimalist Organic Modern</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const container = document.getElementById('slider-container');
+  const overlay = document.getElementById('slider-overlay');
+  const handle = document.getElementById('slider-handle');
+
+  if (container && overlay && handle) {
+    let isDragging = false;
+
+    // Core function to update the clip path and handle position
+    function updatePosition(clientX: number) {
+      const rect = container.getBoundingClientRect();
+      const x = clientX - rect.left;
+      let percentage = (x / rect.width) * 100;
+      
+      // Keep boundaries inside [0%, 100%]
+      percentage = Math.max(0, Math.min(100, percentage));
+      
+      overlay.style.setProperty('--clip-pos', `${percentage}%`);
+      handle.style.left = `${percentage}%`;
+    }
+
+    // Mouse events
+    container.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      updatePosition(e.clientX);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      updatePosition(e.clientX);
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    // Touch events for mobile support
+    container.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      if (e.touches[0]) {
+        updatePosition(e.touches[0].clientX);
+      }
+    });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      if (e.touches[0]) {
+        updatePosition(e.touches[0].clientX);
+      }
+    });
+
+    window.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+  }
+</script>
