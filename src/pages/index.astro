@@ -66,6 +66,14 @@ const structuredData = {
 
 		<!-- JSON-LD Structured Data -->
 		<script type="application/ld+json" set:html={JSON.stringify(structuredData, null, 2)}></script>
+		<!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-2RXJWCXVWB"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-2RXJWCXVWB');
+		</script>
 	</head>
 	<body class="bg-brand-dark text-white selection:bg-brand-red selection:text-white">
 		<Header />
