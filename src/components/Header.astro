@@ -85,7 +85,7 @@
   </div>
 
   <!-- Mobile Overlay -->
-  <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/98 z-45 flex flex-col justify-center px-12 md:hidden translate-x-full transition-transform duration-500 ease-in-out">
+  <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/98 z-[45] flex flex-col justify-center px-12 md:hidden translate-x-full transition-transform duration-500 ease-in-out">
     <nav class="flex flex-col gap-8 text-3xl font-serif tracking-wide text-white">
       <a href="#" class="mobile-nav-link hover:text-brand-red transition-colors">Home</a>
       <a href="/about" class="mobile-nav-link hover:text-brand-red transition-colors">About</a>
@@ -149,17 +149,15 @@
     
     if (isMenuOpen) {
       mobileMenu?.classList.remove('translate-x-full');
-      // Burger animation
-      burgerLines[0].classList.add('rotate-45', 'translate-y-2');
+      burgerLines[0].classList.add('rotate-45', 'translate-y-[7px]');
       burgerLines[1].classList.add('opacity-0');
-      burgerLines[2].classList.add('-rotate-45', '-translate-y-2');
+      burgerLines[2].classList.add('-rotate-45', '-translate-y-[7px]');
       document.body.style.overflow = 'hidden';
     } else {
       mobileMenu?.classList.add('translate-x-full');
-      // Burger animation reset
-      burgerLines[0].classList.remove('rotate-45', 'translate-y-2');
+      burgerLines[0].classList.remove('rotate-45', 'translate-y-[7px]');
       burgerLines[1].classList.remove('opacity-0');
-      burgerLines[2].classList.remove('-rotate-45', '-translate-y-2');
+      burgerLines[2].classList.remove('-rotate-45', '-translate-y-[7px]');
       document.body.style.overflow = '';
     }
   }

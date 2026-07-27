@@ -3,7 +3,7 @@ title: "How to Choose the Right Foundation for Your Abuja Development"
 description: "A structural engineering guide to foundation types for residential and commercial buildings in Abuja's unique soil conditions."
 pubDate: 2026-07-15
 author: "FURD BASE Engineering Team"
-image: "/assets/real-1.jpeg"
+image: "/assets/3d-5.jpeg"
 tags: ["foundation", "engineering", "Abuja", "construction"]
 ---
 
