@@ -3,13 +3,15 @@ title: "The Best Neighborhoods in Abuja for Luxury Real Estate Development"
 description: "A guide to Abuja's premium districts — Maitama, Asokoro, Katampe, Jabi, and Guzape — and what makes each one attractive for luxury residential projects."
 pubDate: 2026-07-28
 author: "FURD BASE"
-image: "/assets/3d-6.jpeg"
+image: "/assets/blog/city-skyline.jpg"
 tags: ["Abuja", "real estate", "luxury homes", "neighborhoods", "Nigeria", "property investment"]
 ---
 
 Abuja is not one market. It's a collection of micro-markets, each with its own character, price dynamics, and buyer profile. Choosing the right neighborhood is as important as choosing the right architect.
 
 Here's what you need to know about Abuja's premium districts in 2026.
+
+![Abuja cityscape at sunset](/assets/blog/city-skyline.jpg)
 
 ## Maitama
 
@@ -35,6 +37,8 @@ Here's what you need to know about Abuja's premium districts in 2026.
 
 **Watch out for:** Some areas fall within the Federal Capital Territory Administration (FCTA) controlled zone, which can complicate development approvals.
 
+![Luxury residential development](/assets/blog/neighborhood-1.jpg)
+
 ## Katampe Extension
 
 **Profile:** Abuja's fastest-growing luxury corridor. The "new Maitama" according to developers.
@@ -59,6 +63,8 @@ Here's what you need to know about Abuja's premium districts in 2026.
 
 **Watch out for:** Soil conditions in some areas require piled foundations, adding ₦15-25M to construction costs. Get a geotechnical survey before committing.
 
+![Modern luxury estate](/assets/blog/neighborhood-2.jpg)
+
 ## Guzape
 
 **Profile:** Emerging luxury district with stunning valley views. The "Beverly Hills of Abuja."
@@ -82,6 +88,8 @@ Here's what you need to know about Abuja's premium districts in 2026.
 **Why it works:** Location, location, location. Minutes from the CBD, markets, and restaurants. High rental demand from expatriates and diplomats.
 
 **Watch out for:** Plot sizes are typically smaller (300-500m²). Building upwards (4-6 floors) is the only way to maximize value.
+
+![Premium residential area](/assets/blog/neighborhood-3.jpg)
 
 ## How to Choose
 

@@ -3,13 +3,15 @@ title: "Architect vs. Engineer: Who Do You Need First?"
 description: "Understanding the difference between architects and structural engineers, and why hiring the right one first saves time, money, and headaches."
 pubDate: 2026-07-30
 author: "FURD BASE"
-image: "/assets/3d-4.jpeg"
+image: "/assets/blog/architect-1.jpg"
 tags: ["architecture", "engineering", "construction", "Nigeria", "design", "project planning"]
 ---
 
 One of the most common mistakes we see in Nigerian construction: hiring a contractor before hiring either an architect or an engineer. The result is always the same — redesigns, structural failures, and budgets that double.
 
 But there's another question people get wrong: *who do you hire first?*
+
+![Architect reviewing building plans](/assets/blog/architect-1.jpg)
 
 ## What an Architect Does
 
@@ -33,6 +35,8 @@ A structural engineer ensures the building stands up. Their scope includes:
 
 In Nigeria, where soil conditions vary dramatically (laterite in Abuja, sand in Lagos, rock in Enugu), structural engineering isn't optional. It's the difference between a building that lasts 50 years and one that cracks in year 3.
 
+![Structural engineer at work](/assets/blog/engineer-1.jpg)
+
 ## Who Do You Need First?
 
 **Hire the architect first.**
@@ -54,6 +58,8 @@ If you hire the engineer first, you'll end up with a structurally sound building
 
 This is how FURD BASE operates. We have architects and engineers working together from day one, which eliminates the costly back-and-forth that plagues most projects.
 
+![Construction site with professional oversight](/assets/blog/construction-1.jpg)
+
 ## The Nigerian Reality
 
 In practice, many builders skip the architect entirely. They hire a "site engineer" (often a civil engineering graduate) to supervise construction, and the design is done informally by the contractor.
@@ -72,5 +78,7 @@ This works for basic structures. For luxury residential or commercial projects, 
 **Structural Engineer:** Look for someone registered with the Council for the Regulation of Engineering in Nigeria (COREN). Ask about their experience with your soil type and building system.
 
 **Or hire a firm that does both.** FURD BASE provides integrated architecture and engineering services, which means one team, one vision, and no finger-pointing between disciplines.
+
+![Modern building under construction](/assets/blog/construction-2.jpg)
 
 *Planning a project? Contact our team for a design consultation.*

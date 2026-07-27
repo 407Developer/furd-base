@@ -3,13 +3,15 @@ title: "How Much Does It Cost to Build a Luxury Home in Abuja in 2026?"
 description: "A comprehensive cost breakdown for building a luxury residential property in Abuja, Nigeria, including materials, labour, and professional fees."
 pubDate: 2026-07-25
 author: "FURD BASE"
-image: "/assets/3d-5.jpeg"
+image: "/assets/blog/luxury-home-1.jpg"
 tags: ["cost", "luxury homes", "Abuja", "Nigeria", "construction budget", "real estate"]
 ---
 
 Building a luxury home in Abuja is one of the most significant investments you'll make. Whether you're constructing in Maitama, Asokoro, Jabi, or Katampe, understanding the true cost — not just the headline figure — is critical to avoiding budget overruns.
 
 Here's what the numbers actually look like in 2026.
+
+![Modern luxury residence in Abuja](/assets/blog/luxury-home-2.jpg)
 
 ## The Short Answer
 
@@ -32,6 +34,8 @@ Here's where the money actually goes:
 | Permits & approvals | 2-3% | ₦5M - ₦12M |
 | Contingency (always include this) | 10% | ₦25M - ₦50M |
 
+![Luxury home exterior with modern design](/assets/blog/luxury-home-3.jpg)
+
 ## What Drives the Price Up
 
 These are the decisions that move you from ₦250M to ₦500M:
@@ -43,6 +47,8 @@ These are the decisions that move you from ₦250M to ₦500M:
 **Smart home systems:** A full Crestron or Savant integration (lighting control, climate, security, audio) adds ₦20-40M. A basic automation setup (smart locks, CCTV, pre-wired speakers) runs ₦5-10M.
 
 **Kitchen:** A custom Italian kitchen (Snaidero, Poliform) with Miele appliances can hit ₦30-50M. A high-quality Nigerian-made kitchen with imported appliances runs ₦8-15M.
+
+![Modern kitchen with premium finishes](/assets/blog/luxury-home-4.jpg)
 
 ## What You Should NOT Skimp On
 
