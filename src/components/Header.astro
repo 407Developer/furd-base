@@ -4,7 +4,7 @@
 <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 border-b border-white/[0.03]">
   <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
     <!-- Logo -->
-    <a href="#" class="flex items-center gap-3 group">
+    <a href="/" class="flex items-center gap-3 group">
       <img 
         src="/assets/FURD-BASE-main-logo.png" 
         alt="FURD BASE Logo" 
@@ -24,31 +24,31 @@
 
     <!-- Navigation (Desktop) -->
     <nav class="hidden md:flex items-center gap-10 font-display text-sm tracking-wider uppercase">
-      <a href="/" class="nav-link relative py-2 text-white hover:text-white transition-colors duration-300">
+      <a href="/" class="nav-link relative py-2 text-white/70 hover:text-white transition-colors duration-300" data-nav="home">
         Home
         <span class="absolute bottom-0 left-0 w-full h-[2px] bg-brand-red scale-x-0 origin-right transition-transform duration-350 ease-out nav-indicator"></span>
       </a>
-      <a href="/#showcase" class="nav-link relative py-2 text-white/70 hover:text-white transition-colors duration-300">
+      <a href="/#showcase" class="nav-link relative py-2 text-white/70 hover:text-white transition-colors duration-300" data-nav="showcase">
         Showcase
         <span class="absolute bottom-0 left-0 w-full h-[2px] bg-brand-red scale-x-0 origin-right transition-transform duration-350 ease-out nav-indicator"></span>
       </a>
-      <a href="#projects" class="nav-link relative py-2 text-white/70 hover:text-white transition-colors duration-300">
+      <a href="/#projects" class="nav-link relative py-2 text-white/70 hover:text-white transition-colors duration-300" data-nav="projects">
         Projects
         <span class="absolute bottom-0 left-0 w-full h-[2px] bg-brand-red scale-x-0 origin-right transition-transform duration-350 ease-out nav-indicator"></span>
       </a>
-      <a href="/about" class="nav-link relative py-2 text-white/70 hover:text-white transition-colors duration-300">
+      <a href="/about" class="nav-link relative py-2 text-white/70 hover:text-white transition-colors duration-300" data-nav="about">
         About
         <span class="absolute bottom-0 left-0 w-full h-[2px] bg-brand-red scale-x-0 origin-right transition-transform duration-350 ease-out nav-indicator"></span>
       </a>
-      <a href="/services" class="nav-link relative py-2 text-white/70 hover:text-white transition-colors duration-300">
+      <a href="/services" class="nav-link relative py-2 text-white/70 hover:text-white transition-colors duration-300" data-nav="services">
         Services
         <span class="absolute bottom-0 left-0 w-full h-[2px] bg-brand-red scale-x-0 origin-right transition-transform duration-350 ease-out nav-indicator"></span>
       </a>
-      <a href="/blog" class="nav-link relative py-2 text-white/70 hover:text-white transition-colors duration-300">
+      <a href="/blog" class="nav-link relative py-2 text-white/70 hover:text-white transition-colors duration-300" data-nav="journal">
         Journal
         <span class="absolute bottom-0 left-0 w-full h-[2px] bg-brand-red scale-x-0 origin-right transition-transform duration-350 ease-out nav-indicator"></span>
       </a>
-      <a href="#contact" class="nav-link relative py-2 text-white/70 hover:text-white transition-colors duration-300">
+      <a href="/#contact" class="nav-link relative py-2 text-white/70 hover:text-white transition-colors duration-300" data-nav="contact">
         Contact
         <span class="absolute bottom-0 left-0 w-full h-[2px] bg-brand-red scale-x-0 origin-right transition-transform duration-350 ease-out nav-indicator"></span>
       </a>
@@ -68,7 +68,7 @@
         </svg>
       </a>
       <a 
-        href="#contact" 
+        href="/#contact" 
         class="relative inline-flex items-center justify-center px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-widest text-white border border-white/20 overflow-hidden group transition-all duration-300 hover:border-brand-red"
       >
         <span class="absolute inset-0 bg-brand-red scale-x-0 origin-left transition-transform duration-500 ease-out group-hover:scale-x-100 -z-10"></span>
@@ -87,17 +87,17 @@
   <!-- Mobile Overlay -->
   <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/98 z-[45] flex flex-col justify-center px-12 md:hidden translate-x-full transition-transform duration-500 ease-in-out">
     <nav class="flex flex-col gap-8 text-3xl font-serif tracking-wide text-white">
-      <a href="#" class="mobile-nav-link hover:text-brand-red transition-colors">Home</a>
+      <a href="/" class="mobile-nav-link hover:text-brand-red transition-colors">Home</a>
+      <a href="/#showcase" class="mobile-nav-link hover:text-brand-red transition-colors">Showcase</a>
+      <a href="/#projects" class="mobile-nav-link hover:text-brand-red transition-colors">Projects</a>
       <a href="/about" class="mobile-nav-link hover:text-brand-red transition-colors">About</a>
       <a href="/services" class="mobile-nav-link hover:text-brand-red transition-colors">Services</a>
       <a href="/blog" class="mobile-nav-link hover:text-brand-red transition-colors">Journal</a>
-      <a href="#showcase" class="mobile-nav-link hover:text-brand-red transition-colors">Showcase</a>
-      <a href="#projects" class="mobile-nav-link hover:text-brand-red transition-colors">Projects</a>
-      <a href="#contact" class="mobile-nav-link hover:text-brand-red transition-colors">Contact</a>
+      <a href="/#contact" class="mobile-nav-link hover:text-brand-red transition-colors">Contact</a>
     </nav>
     <div class="mt-12">
       <a 
-        href="#contact" 
+        href="/#contact" 
         class="inline-block px-8 py-4 bg-brand-red hover:bg-brand-red-dark text-white text-sm font-semibold uppercase tracking-widest rounded-full text-center transition-all duration-300"
       >
         Get A Consultation
@@ -163,10 +163,57 @@
   }
 
   menuToggle?.addEventListener('click', toggleMenu);
-  
+
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
       if (isMenuOpen) toggleMenu();
     });
   });
+
+  // ── Active nav state ──
+  const navLinks = document.querySelectorAll<HTMLElement>('[data-nav]');
+
+  function setActive(navKey: string | null) {
+    navLinks.forEach(link => {
+      const isActive = link.dataset.nav === navKey;
+      link.classList.toggle('text-white', isActive);
+      link.classList.toggle('text-white/70', !isActive);
+      const indicator = link.querySelector('.nav-indicator');
+      if (indicator) {
+        indicator.style.transform = isActive ? 'scale-x(1)' : 'scale-x(0)';
+        if (isActive) indicator.style.transformOrigin = 'left';
+      }
+    });
+  }
+
+  const path = window.location.pathname.replace(/\/$/, '') || '/';
+  const pageNav: Record<string, string> = {
+    '/': 'home',
+    '/about': 'about',
+    '/services': 'services',
+    '/blog': 'journal',
+  };
+  const currentPageNav = Object.entries(pageNav).find(([p]) => path.startsWith(p))?.[1] || null;
+
+  // On the homepage, scroll-spy the section links; elsewhere just highlight the current page.
+  if (currentPageNav === 'home') {
+    setActive('home');
+    const sectionIds = ['showcase', 'projects', 'contact'];
+    const sectionEls = sectionIds
+      .map(id => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    );
+    sectionEls.forEach(el => spy.observe(el));
+  } else {
+    setActive(currentPageNav);
+  }
+
 </script>

@@ -10,16 +10,17 @@ const countryNameMap = { NG: 'Nigeria', AE: 'UAE' };
 const projects = [
   {
     id: 1,
-    title: "The Zenith Pavilion",
-    subtitle: "Modern Luxury Residential",
-    location: "CBD, Abuja",
+    title: "A stunning six-bedroom fully detached duplex",
+    owner: "Anaezionwu Jabuike Henry",
+    subtitle: "Detached Duplex Design",
+    location: "Maitama District, Abuja",
     country: "NG",
     area: "580 M²",
     structure: "Post-Tensioned Concrete Slab",
     timeline: "16 Months (Completed)",
-    image: "/assets/3d-2.jpeg",
-    blueprint: "/assets/3d-8.jpeg",
-    description: "A premium multi-family residential building designed to withstand the tropical climate of Abuja while maintaining maximum glass exposure and visual weightlessness.",
+    image: "/assets/real-1.jpeg",
+    blueprint: "/assets/3d-3.jpeg",
+    description: "This fully detached duplex was designed and built with a modern organic style — maximum glass exposure, deep overhangs for the tropical climate, and a post-tensioned slab that keeps the structure light yet strong.",
     details: [
       { label: "Foundation", value: "Raft Foundation (1.2m Depth)" },
       { label: "Facade", value: "Double Glazed Low-E Glass" },
@@ -28,34 +29,36 @@ const projects = [
   },
   {
     id: 2,
-    title: "Centennial Heights",
-    subtitle: "Eco-Friendly Organic Villa",
-    location: "Maitama Hills, Abuja",
+    title: "A modern luxury villa concept",
+    owner: "FURD BASE Design",
+    subtitle: "Contemporary Villa Concept",
+    location: "CBD, Abuja",
     country: "NG",
-    area: "820 M²",
-    structure: "Composite Steel-Concrete Frame",
-    timeline: "20 Months (In Construction)",
-    image: "/assets/3d-4.jpeg",
-    blueprint: "/assets/3d-5.jpeg",
-    description: "An architectural marvel cantilevered over Maitama Hills, incorporating smart ventilation, greywater recycling, and geothermal floor cooling systems.",
+    area: "450 M²",
+    structure: "Reinforced Concrete Frame",
+    timeline: "Concept & Design Phase",
+    image: "/assets/3d-2.jpeg",
+    blueprint: "/assets/3d-8.jpeg",
+    description: "A clean, contemporary villa layout with open living spaces, a wide balcony line, and structural framing designed for easy future expansion. Every line is engineered for both beauty and buildability.",
     details: [
-      { label: "Foundation", value: "Piled Foundation with Ground Beams" },
-      { label: "Cantilever Span", value: "4.8m Architectural Projection" },
-      { label: "Power Grid", value: "30kW Integrated Solar Slate Roof" }
+      { label: "Foundation", value: "Raft Foundation" },
+      { label: "Ceiling Height", value: "3.8m throughout" },
+      { label: "Engineering Standard", value: "Eurocode 2 Compliance" }
     ]
   },
   {
     id: 3,
-    title: "The Obsidian Oasis",
-    subtitle: "Minimalist Waterfront Estate",
+    title: "A minimalist waterfront residence",
+    owner: "Private Client",
+    subtitle: "Waterfront Residence Concept",
     location: "Lekki Peninsula, Lagos",
     country: "NG",
     area: "420 M²",
     structure: "Reinforced Concrete Frame",
-    timeline: "12 Months (Completed)",
+    timeline: "Concept & Design Phase",
     image: "/assets/3d-6.jpeg",
     blueprint: "/assets/3d-7.jpeg",
-    description: "Designed for a high-saline coastal environment, featuring corrosion-proof structural reinforcements and deep overhang shading structures.",
+    description: "A coastal home designed for a high-saline environment — corrosion-proof reinforcement, deep shaded overhangs, and materials chosen to survive harsh coastal weather for decades.",
     details: [
       { label: "Foundation", value: "Precast Concrete Pile System" },
       { label: "Structural Steel", value: "HDG (Hot-Dip Galvanized)" },
@@ -64,20 +67,59 @@ const projects = [
   },
   {
     id: 4,
-    title: "The Crescent Tower",
-    subtitle: "Luxury Mixed-Use High-Rise",
-    location: "Dubai Marina, UAE",
-    country: "AE",
-    area: "12,400 M²",
-    structure: "Composite Steel-Reinforced Concrete Core",
-    timeline: "24 Months (Design Phase)",
-    image: "/assets/3d-3.jpeg",
+    title: "An eco-friendly organic villa",
+    owner: "Private Client",
+    subtitle: "Eco Villa Concept",
+    location: "Maitama Hills, Abuja",
+    country: "NG",
+    area: "820 M²",
+    structure: "Composite Steel-Concrete Frame",
+    timeline: "Concept & Design Phase",
+    image: "/assets/3d-4.jpeg",
     blueprint: "/assets/3d-5.jpeg",
-    description: "A landmark 22-storey mixed-use tower in Dubai Marina featuring a double-skin facade, sky garden at Level 14, and basement parking over four levels. Designed to LEED Gold标准和Eurocode 2.",
+    description: "A hillside villa with smart ventilation, natural cooling, and a solar-integrated roof. Designed to sit gently on the land while standing strongly for generations.",
     details: [
-      { label: "Facade System", value: "Unitized Double-Skin Curtain Wall" },
-      { label: "Core Design", value: "RC Core with Outrigger Systems" },
-      { label: "Sustainability", value: "LEED Gold Target / PV Ready Roof" }
+      { label: "Foundation", value: "Piled Foundation with Ground Beams" },
+      { label: "Cantilever Span", value: "4.8m Architectural Projection" },
+      { label: "Power Grid", value: "30kW Integrated Solar Slate Roof" }
+    ]
+  },
+  {
+    id: 5,
+    title: "A reinforced foundation & structural works project",
+    owner: "FURD BASE Works",
+    subtitle: "Foundation & Groundworks",
+    location: "Abuja, Nigeria",
+    country: "NG",
+    area: "On-Site Works",
+    structure: "Reinforced Concrete Raft",
+    timeline: "Completed",
+    image: "/assets/WhatsApp Image 2026-06-23 at 15.03.40.jpeg",
+    blueprint: "/assets/3d-8.jpeg",
+    description: "Real on-site foundation works — reinforcing steel, load-tested concrete, and careful compliance with our safety standards. This is where a great building begins.",
+    details: [
+      { label: "Foundation", value: "Reinforced Raft System" },
+      { label: "Rebar Density", value: "120 kg/m³ (Grade 60)" },
+      { label: "Safety Factor", value: "1.5x (Exceeds Code)" }
+    ]
+  },
+  {
+    id: 6,
+    title: "A premium finishing & facade project",
+    owner: "FURD BASE Finishes",
+    subtitle: "Finishing & Facade Works",
+    location: "Abuja, Nigeria",
+    country: "NG",
+    area: "On-Site Works",
+    structure: "Plastered Facade System",
+    timeline: "Completed",
+    image: "/assets/WhatsApp Image 2026-06-23 at 15.04.57.jpeg",
+    blueprint: "/assets/real-2.jpeg",
+    description: "Careful external plastering and facade detailing that protects the structure beneath — tested for water repellency and finished to a premium standard.",
+    details: [
+      { label: "Render Tolerance", value: "±2mm across elevations" },
+      { label: "Curing Period", value: "14 days controlled" },
+      { label: "Water Repellency", value: "Contact angle > 90°" }
     ]
   }
 ];
@@ -92,13 +134,13 @@ const projects = [
     <!-- Section Header -->
     <div class="mb-20 max-w-2xl">
       <span class="font-display text-xs md:text-sm tracking-[0.3em] uppercase text-brand-red font-semibold mb-3 block">
-        Structural Engineering
+        Our Work
       </span>
       <h2 class="font-serif text-4xl md:text-5xl font-bold text-white tracking-tight uppercase mb-6">
-        Project Matrix
+        Some Things We Have Done
       </h2>
       <p class="text-brand-gray font-light text-sm md:text-base">
-        Explore our portfolio treated as technical engineering case studies. Every development proves our core competence in structural integrity, material longevity, and architectural execution.
+        A look at some of the homes and developments we have designed and built. Every project is delivered to the same standard — strong structure, careful finishing, and honest engineering.
       </p>
     </div>
 
@@ -118,6 +160,7 @@ const projects = [
                 <div class="flex-1">
                   <span class="text-xs uppercase tracking-widest text-brand-gray">{project.subtitle}</span>
                   <h3 class="font-serif text-2xl md:text-3xl font-bold text-white mt-0.5">{project.title}</h3>
+                  <span class="text-xs text-brand-red mt-1 block font-semibold">Client: {project.owner}</span>
                 </div>
                 <div class="flex items-center gap-1.5 px-2.5 py-1 rounded border border-white/10 bg-brand-dark/60 text-[10px] uppercase tracking-wider font-semibold text-white/70 whitespace-nowrap" set:html={`${flagMap[project.country]} <span class="ml-1.5">${countryNameMap[project.country]}</span>`}>
                 </div>
@@ -169,7 +212,7 @@ const projects = [
                 class="view-details-btn inline-flex items-center gap-3 text-xs uppercase tracking-widest font-semibold text-white hover:text-brand-red transition-colors duration-300"
                 data-target={project.id}
               >
-                View Detailed Blueprints
+                See Design Details
                 <span class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:border-brand-red transition-all">
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
@@ -198,7 +241,7 @@ const projects = [
               id={`blueprint-panel-${project.id}`}
             >
               <div class="flex items-center justify-between border-b border-white/10 pb-4">
-                <h4 class="font-serif text-lg font-bold text-white uppercase tracking-wider">Structural Schematics</h4>
+                <h4 class="font-serif text-lg font-bold text-white uppercase tracking-wider">Design Details</h4>
                 <button 
                   class="close-blueprint-btn text-brand-gray hover:text-white"
                   data-target={project.id}
@@ -235,14 +278,14 @@ const projects = [
                 data-id={project.id}
                 data-mode="render"
               >
-                Render
+                Design
               </button>
               <button 
                 class="img-mode-btn bg-brand-dark/80 hover:bg-brand-red text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded backdrop-blur border border-white/10"
                 data-id={project.id}
                 data-mode="blueprint"
               >
-                Structural Detail
+                Blueprint
               </button>
             </div>
           </div>
