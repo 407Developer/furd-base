@@ -7,6 +7,8 @@ import ContactSection from '../components/ContactSection.astro';
 import '../styles/global.css';
 
 const linkedinUrl = import.meta.env.PUBLIC_LINKEDIN_URL || 'https://www.linkedin.com/in/jabuike-aneazionwu-b54196418/';
+const facebookUrl = import.meta.env.PUBLIC_FACEBOOK_URL || 'https://www.facebook.com/1143285678875417';
+const instagramUrl = import.meta.env.PUBLIC_INSTAGRAM_URL || 'https://www.instagram.com/furd_base_limited';
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -31,9 +33,10 @@ const structuredData = {
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer service",
+    "email": "inquire@furdbase.com",
     "telephone": "+2348066033786"
   },
-  "sameAs": [linkedinUrl]
+  "sameAs": [linkedinUrl, facebookUrl, instagramUrl]
 };
 ---
 
