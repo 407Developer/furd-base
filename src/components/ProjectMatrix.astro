@@ -11,126 +11,6 @@ const countryNameMap = { NG: 'Nigeria', AE: 'UAE' };
 const projects = [
   {
     id: 1,
-    title: "A stunning six-bedroom fully detached duplex",
-    owner: "Private Client",
-    subtitle: "Detached Duplex Design",
-    location: "Maitama District, Abuja",
-    country: "NG",
-    area: "580 M²",
-    structure: "Reinforced Concrete Frame",
-    timeline: "Concept & Design Phase",
-    description: "A spacious six-bedroom detached duplex designed with cantilevered balconies, extensive floor-to-ceiling glass paneling, and an integrated double carport.",
-    gallery: [
-      "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01 (1).jpeg",
-      "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01 (2).jpeg",
-      "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01.jpeg",
-      "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.02 (1).jpeg",
-      "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.02.jpeg"
-    ],
-    details: [
-      { label: "Foundation", value: "Raft Foundation (1.2m Depth)" },
-      { label: "Facade", value: "Double Glazed Low-E Glass" },
-      { label: "Engineering Standard", value: "Eurocode 2 Compliance" }
-    ]
-  },
-  {
-    id: 2,
-    title: "A twelve-unit two-bedroom apartment block",
-    owner: "Private Client",
-    subtitle: "2-Bedroom Apartment Block",
-    location: "Life Camp, Abuja",
-    country: "NG",
-    area: "1,150 M²",
-    structure: "Reinforced Concrete Frame",
-    timeline: "Concept & Design Phase",
-    description: "A four-story multi-family residential building designed to accommodate twelve self-contained two-bedroom apartments with optimized floor layouts.",
-    gallery: [
-      "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.04.jpeg",
-      "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.05 (1).jpeg",
-      "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.05.jpeg",
-      "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.06 (2).jpeg"
-    ],
-    details: [
-      { label: "Foundation", value: "Raft with Ground Beams" },
-      { label: "Unit Count", value: "12 Units (2 Bedrooms Each)" },
-      { label: "Engineering Standard", value: "Eurocode 2 Compliance" }
-    ]
-  },
-  {
-    id: 3,
-    title: "A twelve-unit three-bedroom apartment complex",
-    owner: "Private Client",
-    subtitle: "3-Bedroom Apartment Complex",
-    location: "Utako District, Abuja",
-    country: "NG",
-    area: "1,380 M²",
-    structure: "Reinforced Concrete Frame",
-    timeline: "Concept & Design Phase",
-    description: "A four-story residential apartment block designed with twelve spacious three-bedroom units featuring ensuite bathrooms and private balconies.",
-    gallery: [
-      "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.47.59 (1).jpeg",
-      "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.47.59.jpeg",
-      "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.00 (1).jpeg"
-    ],
-    details: [
-      { label: "Foundation", value: "Raft Foundation with Piles" },
-      { label: "Unit Count", value: "12 Units (3 Bedrooms Each)" },
-      { label: "Engineering Standard", value: "Eurocode 2 Compliance" }
-    ]
-  },
-  {
-    id: 4,
-    title: "A twin three-bedroom semi-detached duplex",
-    owner: "Private Client",
-    subtitle: "Semi-Detached Duplex",
-    location: "Jahi District, Abuja",
-    country: "NG",
-    area: "480 M²",
-    structure: "Reinforced Concrete Frame",
-    timeline: "Concept & Design Phase",
-    description: "Symmetrical twin semi-detached units with private front verandas, dark stone cladding accents, and individual parking bays.",
-    gallery: [
-      "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.00.jpeg",
-      "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.06 (1).jpeg",
-      "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.06.jpeg",
-      "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.07 (1).jpeg",
-      "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.07.jpeg",
-      "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.08 (1).jpeg",
-      "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.08 (2).jpeg"
-    ],
-    details: [
-      { label: "Foundation", value: "Raft Foundation" },
-      { label: "Units", value: "2 Semi-Detached Units" },
-      { label: "Engineering Standard", value: "Eurocode 2 Compliance" }
-    ]
-  },
-  {
-    id: 5,
-    title: "A mixed development of six 3-bedroom and three 2-bedroom apartments",
-    owner: "Private Client",
-    subtitle: "Mixed Apartment Development",
-    location: "Katampe Main, Abuja",
-    country: "NG",
-    area: "1,450 M²",
-    structure: "Reinforced Concrete Frame",
-    timeline: "Concept & Design Phase",
-    description: "A mixed-density residential block designed with six 3-bedroom apartments and three 2-bedroom units, maximizing plot efficiency.",
-    gallery: [
-      "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/733233149_122101090251370937_6061833491946118441_n.jpg",
-      "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03 (1).jpeg",
-      "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03 copy.jpeg",
-      "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03.jpeg",
-      "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.04 (1).jpeg",
-      "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.04 copy.jpeg"
-    ],
-    details: [
-      { label: "Foundation", value: "Raft Foundation" },
-      { label: "Composition", value: "6 x 3-Bed & 3 x 2-Bed" },
-      { label: "Engineering Standard", value: "Eurocode 2 Compliance" }
-    ]
-  },
-  {
-    id: 6,
     title: "Completed residential villas in the UAE",
     owner: "Private Client",
     subtitle: "Completed Villa Projects",
@@ -141,21 +21,30 @@ const projects = [
     timeline: "Completed",
     description: "A collection of completed modern villas in the UAE — crisp white finishes, premium stonework, and clean architectural lines delivered to a high standard.",
     gallery: [
-      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.08.jpeg",
-      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09 (1).jpeg",
-      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09 (2).jpeg",
-      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09.jpeg",
-      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.10 (1).jpeg",
-      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.10.jpeg"
-    ],
+          "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.08.jpeg",
+          "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09 (1).jpeg",
+          "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09 (2).jpeg",
+          "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09.jpeg",
+          "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.10 (1).jpeg",
+          "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.10.jpeg"
+      ],
     details: [
-      { label: "Foundation", value: "Reinforced Concrete Raft" },
-      { label: "Exterior Finish", value: "Weatherproof Mineral Render" },
-      { label: "Engineering Standard", value: "UAE Building Code Compliant" }
-    ]
+          {
+              "label": "Foundation",
+              "value": "Reinforced Concrete Raft"
+          },
+          {
+              "label": "Exterior Finish",
+              "value": "Weatherproof Mineral Render"
+          },
+          {
+              "label": "Engineering Standard",
+              "value": "UAE Building Code Compliant"
+          }
+      ]
   },
   {
-    id: 7,
+    id: 2,
     title: "A sixteen-unit two-bedroom flat building with ground-floor offices",
     owner: "Private Client",
     subtitle: "16-Unit 2-Bedroom Flats & Offices",
@@ -166,15 +55,189 @@ const projects = [
     timeline: "Completed",
     description: "A completed mixed-use building delivering sixteen two-bedroom flats with office spaces on the ground floor — designed for strong rental returns and efficient layout.",
     gallery: [
-      "/assets/projects/finished projects UAE/16 units of 2 bedroom flats with offices at the buttom/WhatsApp Image 2026-07-31 at 11.54.19.jpeg",
-      "/assets/projects/finished projects UAE/16 units of 2 bedroom flats with offices at the buttom/WhatsApp Image 2026-07-31 at 11.54.20 (1).jpeg",
-      "/assets/projects/finished projects UAE/16 units of 2 bedroom flats with offices at the buttom/WhatsApp Image 2026-07-31 at 11.54.20.jpeg"
-    ],
+          "/assets/projects/finished projects UAE/16 units of 2 bedroom flats with offices at the buttom/WhatsApp Image 2026-07-31 at 11.54.19.jpeg",
+          "/assets/projects/finished projects UAE/16 units of 2 bedroom flats with offices at the buttom/WhatsApp Image 2026-07-31 at 11.54.20 (1).jpeg",
+          "/assets/projects/finished projects UAE/16 units of 2 bedroom flats with offices at the buttom/WhatsApp Image 2026-07-31 at 11.54.20.jpeg"
+      ],
     details: [
-      { label: "Foundation", value: "Reinforced Concrete Raft" },
-      { label: "Composition", value: "16 x 2-Bed Flats + Offices" },
-      { label: "Engineering Standard", value: "UAE Building Code Compliant" }
-    ]
+          {
+              "label": "Foundation",
+              "value": "Reinforced Concrete Raft"
+          },
+          {
+              "label": "Composition",
+              "value": "16 x 2-Bed Flats + Offices"
+          },
+          {
+              "label": "Engineering Standard",
+              "value": "UAE Building Code Compliant"
+          }
+      ]
+  },
+  {
+    id: 3,
+    title: "A stunning six-bedroom fully detached duplex",
+    owner: "Private Client",
+    subtitle: "Detached Duplex Design",
+    location: "Maitama District, Abuja",
+    country: "NG",
+    area: "580 M²",
+    structure: "Reinforced Concrete Frame",
+    timeline: "Concept & Design Phase",
+    description: "A spacious six-bedroom detached duplex designed with cantilevered balconies, extensive floor-to-ceiling glass paneling, and an integrated double carport.",
+    gallery: [
+          "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01 (1).jpeg",
+          "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01 (2).jpeg",
+          "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01.jpeg",
+          "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.02 (1).jpeg",
+          "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.02.jpeg"
+      ],
+    details: [
+          {
+              "label": "Foundation",
+              "value": "Raft Foundation (1.2m Depth)"
+          },
+          {
+              "label": "Facade",
+              "value": "Double Glazed Low-E Glass"
+          },
+          {
+              "label": "Engineering Standard",
+              "value": "Eurocode 2 Compliance"
+          }
+      ]
+  },
+  {
+    id: 4,
+    title: "A twelve-unit two-bedroom apartment block",
+    owner: "Private Client",
+    subtitle: "2-Bedroom Apartment Block",
+    location: "Life Camp, Abuja",
+    country: "NG",
+    area: "1,150 M²",
+    structure: "Reinforced Concrete Frame",
+    timeline: "Concept & Design Phase",
+    description: "A four-story multi-family residential building designed to accommodate twelve self-contained two-bedroom apartments with optimized floor layouts.",
+    gallery: [
+          "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.04.jpeg",
+          "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.05 (1).jpeg",
+          "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.05.jpeg",
+          "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.06 (2).jpeg"
+      ],
+    details: [
+          {
+              "label": "Foundation",
+              "value": "Raft with Ground Beams"
+          },
+          {
+              "label": "Unit Count",
+              "value": "12 Units (2 Bedrooms Each)"
+          },
+          {
+              "label": "Engineering Standard",
+              "value": "Eurocode 2 Compliance"
+          }
+      ]
+  },
+  {
+    id: 5,
+    title: "A twelve-unit three-bedroom apartment complex",
+    owner: "Private Client",
+    subtitle: "3-Bedroom Apartment Complex",
+    location: "Utako District, Abuja",
+    country: "NG",
+    area: "1,380 M²",
+    structure: "Reinforced Concrete Frame",
+    timeline: "Concept & Design Phase",
+    description: "A four-story residential apartment block designed with twelve spacious three-bedroom units featuring ensuite bathrooms and private balconies.",
+    gallery: [
+          "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.47.59 (1).jpeg",
+          "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.47.59.jpeg",
+          "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.00 (1).jpeg"
+      ],
+    details: [
+          {
+              "label": "Foundation",
+              "value": "Raft Foundation with Piles"
+          },
+          {
+              "label": "Unit Count",
+              "value": "12 Units (3 Bedrooms Each)"
+          },
+          {
+              "label": "Engineering Standard",
+              "value": "Eurocode 2 Compliance"
+          }
+      ]
+  },
+  {
+    id: 6,
+    title: "A twin three-bedroom semi-detached duplex",
+    owner: "Private Client",
+    subtitle: "Semi-Detached Duplex",
+    location: "Jahi District, Abuja",
+    country: "NG",
+    area: "480 M²",
+    structure: "Reinforced Concrete Frame",
+    timeline: "Concept & Design Phase",
+    description: "Symmetrical twin semi-detached units with private front verandas, dark stone cladding accents, and individual parking bays.",
+    gallery: [
+          "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.00.jpeg",
+          "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.06 (1).jpeg",
+          "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.06.jpeg",
+          "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.07 (1).jpeg",
+          "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.07.jpeg",
+          "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.08 (1).jpeg",
+          "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.08 (2).jpeg"
+      ],
+    details: [
+          {
+              "label": "Foundation",
+              "value": "Raft Foundation"
+          },
+          {
+              "label": "Units",
+              "value": "2 Semi-Detached Units"
+          },
+          {
+              "label": "Engineering Standard",
+              "value": "Eurocode 2 Compliance"
+          }
+      ]
+  },
+  {
+    id: 7,
+    title: "A mixed development of six 3-bedroom and three 2-bedroom apartments",
+    owner: "Private Client",
+    subtitle: "Mixed Apartment Development",
+    location: "Katampe Main, Abuja",
+    country: "NG",
+    area: "1,450 M²",
+    structure: "Reinforced Concrete Frame",
+    timeline: "Concept & Design Phase",
+    description: "A mixed-density residential block designed with six 3-bedroom apartments and three 2-bedroom units, maximizing plot efficiency.",
+    gallery: [
+          "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/733233149_122101090251370937_6061833491946118441_n.jpg",
+          "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03 (1).jpeg",
+          "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03 copy.jpeg",
+          "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03.jpeg",
+          "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.04 (1).jpeg",
+          "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.04 copy.jpeg"
+      ],
+    details: [
+          {
+              "label": "Foundation",
+              "value": "Raft Foundation"
+          },
+          {
+              "label": "Composition",
+              "value": "6 x 3-Bed & 3 x 2-Bed"
+          },
+          {
+              "label": "Engineering Standard",
+              "value": "Eurocode 2 Compliance"
+          }
+      ]
   }
 ];
 ---
