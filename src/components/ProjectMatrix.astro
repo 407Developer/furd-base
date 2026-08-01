@@ -1,5 +1,6 @@
 ---
 // ProjectMatrix.astro
+// Each project is one folder; all images in that folder render in a carousel.
 
 const ngFlag = `<svg class="inline-block w-5 h-3.5 rounded-[2px] shadow-sm" viewBox="0 0 10 7" xmlns="http://www.w3.org/2000/svg"><rect width="10" height="7" fill="#fff"/><rect width="3.33" height="7" fill="#008751"/><rect x="6.67" width="3.33" height="7" fill="#008751"/></svg>`;
 const aeFlag = `<svg class="inline-block w-5 h-3.5 rounded-[2px] shadow-sm" viewBox="0 0 10 7" xmlns="http://www.w3.org/2000/svg"><rect width="10" height="7" fill="#fff"/><rect width="10" height="2.33" fill="#00732f"/><rect y="4.67" width="10" height="2.33" fill="#000"/><rect width="2.5" height="7" fill="#ce1127"/></svg>`;
@@ -9,955 +10,151 @@ const countryNameMap = { NG: 'Nigeria', AE: 'UAE' };
 
 const projects = [
   {
-    "id": 1,
-    "title": "A modern six-bedroom fully detached duplex with grand entry canopy",
-    "owner": "Private Client",
-    "subtitle": "Detached Duplex Design",
-    "location": "Maitama District, Abuja",
-    "country": "NG",
-    "area": "580 M\u00b2",
-    "structure": "Post-Tensioned Concrete Slab",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01 (1).jpeg",
-    "blueprint": "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.02.jpeg",
-    "description": "A spacious six-bedroom detached duplex designed with cantilevered balconies, extensive floor-to-ceiling glass paneling, and an integrated double carport.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation (1.2m Depth)"
-      },
-      {
-        "label": "Facade",
-        "value": "Double Glazed Low-E Glass"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
+    id: 1,
+    title: "A stunning six-bedroom fully detached duplex",
+    owner: "Private Client",
+    subtitle: "Detached Duplex Design",
+    location: "Maitama District, Abuja",
+    country: "NG",
+    area: "580 M²",
+    structure: "Reinforced Concrete Frame",
+    timeline: "Concept & Design Phase",
+    description: "A spacious six-bedroom detached duplex designed with cantilevered balconies, extensive floor-to-ceiling glass paneling, and an integrated double carport.",
+    gallery: [
+      "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01 (1).jpeg",
+      "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01 (2).jpeg",
+      "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01.jpeg",
+      "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.02 (1).jpeg",
+      "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.02.jpeg"
+    ],
+    details: [
+      { label: "Foundation", value: "Raft Foundation (1.2m Depth)" },
+      { label: "Facade", value: "Double Glazed Low-E Glass" },
+      { label: "Engineering Standard", value: "Eurocode 2 Compliance" }
     ]
   },
   {
-    "id": 2,
-    "title": "A six-bedroom detached duplex design featuring side elevation detail",
-    "owner": "Private Client",
-    "subtitle": "Detached Duplex Design",
-    "location": "Guzape District, Abuja",
-    "country": "NG",
-    "area": "580 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01 (2).jpeg",
-    "blueprint": "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01.jpeg",
-    "description": "Side elevation render demonstrating structural overhangs, clean horizontal banding, and climate-conscious sun shading elements.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Structure",
-        "value": "RC Columns & Beams"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
+    id: 2,
+    title: "A twelve-unit two-bedroom apartment block",
+    owner: "Private Client",
+    subtitle: "2-Bedroom Apartment Block",
+    location: "Life Camp, Abuja",
+    country: "NG",
+    area: "1,150 M²",
+    structure: "Reinforced Concrete Frame",
+    timeline: "Concept & Design Phase",
+    description: "A four-story multi-family residential building designed to accommodate twelve self-contained two-bedroom apartments with optimized floor layouts.",
+    gallery: [
+      "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.04.jpeg",
+      "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.05 (1).jpeg",
+      "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.05.jpeg",
+      "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.06 (2).jpeg"
+    ],
+    details: [
+      { label: "Foundation", value: "Raft with Ground Beams" },
+      { label: "Unit Count", value: "12 Units (2 Bedrooms Each)" },
+      { label: "Engineering Standard", value: "Eurocode 2 Compliance" }
     ]
   },
   {
-    "id": 3,
-    "title": "A luxury six-bedroom detached duplex with wide glass balcony",
-    "owner": "Private Client",
-    "subtitle": "Detached Duplex Design",
-    "location": "Katampe Hill, Abuja",
-    "country": "NG",
-    "area": "600 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01.jpeg",
-    "blueprint": "/assets/3d-3.jpeg",
-    "description": "Front perspective showcasing wide upper balconies, warm architectural wood accent louvers, and a sleek contemporary silhouette.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Piled Foundation"
-      },
-      {
-        "label": "Ceiling Height",
-        "value": "3.6m Floor-to-Ceiling"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
+    id: 3,
+    title: "A twelve-unit three-bedroom apartment complex",
+    owner: "Private Client",
+    subtitle: "3-Bedroom Apartment Complex",
+    location: "Utako District, Abuja",
+    country: "NG",
+    area: "1,380 M²",
+    structure: "Reinforced Concrete Frame",
+    timeline: "Concept & Design Phase",
+    description: "A four-story residential apartment block designed with twelve spacious three-bedroom units featuring ensuite bathrooms and private balconies.",
+    gallery: [
+      "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.47.59 (1).jpeg",
+      "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.47.59.jpeg",
+      "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.00 (1).jpeg"
+    ],
+    details: [
+      { label: "Foundation", value: "Raft Foundation with Piles" },
+      { label: "Unit Count", value: "12 Units (3 Bedrooms Each)" },
+      { label: "Engineering Standard", value: "Eurocode 2 Compliance" }
     ]
   },
   {
-    "id": 4,
-    "title": "A contemporary six-bedroom duplex with integrated carport",
-    "owner": "Private Client",
-    "subtitle": "Detached Duplex Design",
-    "location": "Jabi District, Abuja",
-    "country": "NG",
-    "area": "580 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.02 (1).jpeg",
-    "blueprint": "/assets/3d-8.jpeg",
-    "description": "Three-quarter front view highlighting the covered driveway parking, security entrance gate integration, and perimeter wall detailing.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Parking Capacity",
-        "value": "4 Vehicles Covered"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
+    id: 4,
+    title: "A twin three-bedroom semi-detached duplex",
+    owner: "Private Client",
+    subtitle: "Semi-Detached Duplex",
+    location: "Jahi District, Abuja",
+    country: "NG",
+    area: "480 M²",
+    structure: "Reinforced Concrete Frame",
+    timeline: "Concept & Design Phase",
+    description: "Symmetrical twin semi-detached units with private front verandas, dark stone cladding accents, and individual parking bays.",
+    gallery: [
+      "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.00.jpeg",
+      "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.06 (1).jpeg",
+      "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.06.jpeg",
+      "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.07 (1).jpeg",
+      "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.07.jpeg",
+      "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.08 (1).jpeg",
+      "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.08 (2).jpeg"
+    ],
+    details: [
+      { label: "Foundation", value: "Raft Foundation" },
+      { label: "Units", value: "2 Semi-Detached Units" },
+      { label: "Engineering Standard", value: "Eurocode 2 Compliance" }
     ]
   },
   {
-    "id": 5,
-    "title": "An elegant six-bedroom detached duplex rendered at sunset",
-    "owner": "Private Client",
-    "subtitle": "Detached Duplex Design",
-    "location": "Maitama District, Abuja",
-    "country": "NG",
-    "area": "620 M\u00b2",
-    "structure": "Post-Tensioned Concrete Slab",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.02.jpeg",
-    "blueprint": "/assets/3d-5.jpeg",
-    "description": "Dusk lighting render highlighting perimeter landscape wall sconces, accent facade reveals, and floor-to-ceiling glass illumination.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Lighting Spec",
-        "value": "Architectural LED Recessed"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
+    id: 5,
+    title: "A mixed development of six 3-bedroom and three 2-bedroom apartments",
+    owner: "Private Client",
+    subtitle: "Mixed Apartment Development",
+    location: "Katampe Main, Abuja",
+    country: "NG",
+    area: "1,450 M²",
+    structure: "Reinforced Concrete Frame",
+    timeline: "Concept & Design Phase",
+    description: "A mixed-density residential block designed with six 3-bedroom apartments and three 2-bedroom units, maximizing plot efficiency.",
+    gallery: [
+      "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/733233149_122101090251370937_6061833491946118441_n.jpg",
+      "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03 (1).jpeg",
+      "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03 copy.jpeg",
+      "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03.jpeg",
+      "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.04 (1).jpeg",
+      "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.04 copy.jpeg"
+    ],
+    details: [
+      { label: "Foundation", value: "Raft Foundation" },
+      { label: "Composition", value: "6 x 3-Bed & 3 x 2-Bed" },
+      { label: "Engineering Standard", value: "Eurocode 2 Compliance" }
     ]
   },
   {
-    "id": 6,
-    "title": "A modern twelve-unit two-bedroom apartment block",
-    "owner": "Private Client",
-    "subtitle": "2-Bedroom Apartment Block",
-    "location": "Life Camp, Abuja",
-    "country": "NG",
-    "area": "1,150 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.04.jpeg",
-    "blueprint": "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.05.jpeg",
-    "description": "A four-story multi-family residential building designed to accommodate twelve self-contained two-bedroom apartments with optimized floor layouts.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft with Ground Beams"
-      },
-      {
-        "label": "Unit Count",
-        "value": "12 Units (2 Bedrooms Each)"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "title": "A twelve-unit two-bedroom residential apartment complex view",
-    "owner": "Private Client",
-    "subtitle": "2-Bedroom Apartment Block",
-    "location": "Wuye District, Abuja",
-    "country": "NG",
-    "area": "1,150 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.05 (1).jpeg",
-    "blueprint": "/assets/3d-7.jpeg",
-    "description": "Angular perspective highlighting stairwell glass enclosure, structural columns, and uniform window openings across upper floors.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Staircase",
-        "value": "Enclosed RC Safety Core"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "title": "A contemporary multi-family two-bedroom apartment building",
-    "owner": "Private Client",
-    "subtitle": "2-Bedroom Apartment Block",
-    "location": "Life Camp, Abuja",
-    "country": "NG",
-    "area": "1,200 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.05.jpeg",
-    "blueprint": "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.04.jpeg",
-    "description": "Full front facade perspective showing symmetry in architectural features, balcony glass railings, and ground floor access points.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Deep Raft Foundation"
-      },
-      {
-        "label": "Balcony Railings",
-        "value": "Toughened Safety Glass"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 9,
-    "title": "A twelve-unit two-bedroom apartment block with landscaped forecourt",
-    "owner": "Private Client",
-    "subtitle": "2-Bedroom Apartment Block",
-    "location": "Wuye District, Abuja",
-    "country": "NG",
-    "area": "1,150 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.06 (2).jpeg",
-    "blueprint": "/assets/3d-2.jpeg",
-    "description": "Ground-level view detailing paved parking areas, drainage channels, and entry security gate structure for apartment residents.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Paving Spec",
-        "value": "Interlocking Concrete Blocks"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 10,
-    "title": "A multi-unit residential block featuring nine apartment units",
-    "owner": "Private Client",
-    "subtitle": "Mixed Apartment Development",
-    "location": "Katampe Main, Abuja",
-    "country": "NG",
-    "area": "1,450 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/733233149_122101090251370937_6061833491946118441_n.jpg",
-    "blueprint": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03.jpeg",
-    "description": "Mixed-density residential block designed with six 3-bedroom apartments and three 2-bedroom units, maximizing plot efficiency.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Composition",
-        "value": "6 x 3-Bed & 3 x 2-Bed"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 11,
-    "title": "A nine-unit mixed apartment development with modern facade",
-    "owner": "Private Client",
-    "subtitle": "Mixed Apartment Development",
-    "location": "Gwarinpa, Abuja",
-    "country": "NG",
-    "area": "1,450 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03 (1).jpeg",
-    "blueprint": "/assets/3d-4.jpeg",
-    "description": "Elevated side render depicting upper floor projections, dark accent wall panels, and climate-durable exterior paint finish.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Exterior Finish",
-        "value": "Textured Acrylic Render"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 12,
-    "title": "A multi-family apartment building comprising three and two bedroom units",
-    "owner": "Private Client",
-    "subtitle": "Mixed Apartment Development",
-    "location": "Katampe Main, Abuja",
-    "country": "NG",
-    "area": "1,450 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03 copy.jpeg",
-    "blueprint": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.04 (1).jpeg",
-    "description": "Architectural visualization showing vertical element features, window alignment, and roof parapet cap detailing.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Roof Structure",
-        "value": "Hidden Structural Steel Roof"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 13,
-    "title": "An architectural render of a nine-unit mixed apartment building",
-    "owner": "Private Client",
-    "subtitle": "Mixed Apartment Development",
-    "location": "Gwarinpa, Abuja",
-    "country": "NG",
-    "area": "1,450 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03.jpeg",
-    "blueprint": "/assets/3d-6.jpeg",
-    "description": "Front corner view showing balanced structural geometry, recessed window bays, and integrated utility duct channels.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Glazing",
-        "value": "Powder-Coated Aluminum Frames"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 14,
-    "title": "A side view of a nine-unit residential apartment development",
-    "owner": "Private Client",
-    "subtitle": "Mixed Apartment Development",
-    "location": "Katampe Main, Abuja",
-    "country": "NG",
-    "area": "1,450 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.04 (1).jpeg",
-    "blueprint": "/assets/3d-8.jpeg",
-    "description": "Detailed perspective showing service access corridors, staircase window mullions, and external AC compressor recessed ledges.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Services",
-        "value": "Concealed Piping & Cable Racks"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 15,
-    "title": "A perspective view of a mixed residential block with private balconies",
-    "owner": "Private Client",
-    "subtitle": "Mixed Apartment Development",
-    "location": "Gwarinpa, Abuja",
-    "country": "NG",
-    "area": "1,450 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.04 copy.jpeg",
-    "blueprint": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/733233149_122101090251370937_6061833491946118441_n.jpg",
-    "description": "Wide angle exterior render capturing the overall building envelope, front garden setback, and perimeter fence wall.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Setback",
-        "value": "6m Standard Road Setback"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 16,
-    "title": "A semi-detached twin three-bedroom duplex residence",
-    "owner": "Private Client",
-    "subtitle": "Semi-Detached Duplex",
-    "location": "Jahi District, Abuja",
-    "country": "NG",
-    "area": "480 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.00.jpeg",
-    "blueprint": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.06.jpeg",
-    "description": "Symmetrical twin semi-detached units with private front verandas, dark stone cladding accents, and individual parking bays.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Units",
-        "value": "2 Semi-Detached Units"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 17,
-    "title": "A modern twin three-bedroom duplex with double garage space",
-    "owner": "Private Client",
-    "subtitle": "Semi-Detached Duplex",
-    "location": "Mbora District, Abuja",
-    "country": "NG",
-    "area": "480 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.06 (1).jpeg",
-    "blueprint": "/assets/3d-3.jpeg",
-    "description": "Side angle render detailing balcony overhangs, upper level master suite glass windows, and clean white plaster finish.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Strip Foundation"
-      },
-      {
-        "label": "Balconies",
-        "value": "Cantilevered RC Slabs"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 18,
-    "title": "A twin three-bedroom residential building design",
-    "owner": "Private Client",
-    "subtitle": "Semi-Detached Duplex",
-    "location": "Jahi District, Abuja",
-    "country": "NG",
-    "area": "480 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.06.jpeg",
-    "blueprint": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.07.jpeg",
-    "description": "Front elevation highlighting central dividing wall structure, individual entrance portals, and perimeter lighting.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Party Wall",
-        "value": "Sound-Insulated Double Cavity"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 19,
-    "title": "An elevation view of a two-unit three-bedroom semi-detached villa",
-    "owner": "Private Client",
-    "subtitle": "Semi-Detached Duplex",
-    "location": "Mbora District, Abuja",
-    "country": "NG",
-    "area": "480 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.07 (1).jpeg",
-    "blueprint": "/assets/3d-5.jpeg",
-    "description": "Three-quarter view highlighting modern flat-roof design with concealed drainage gutters and perimeter parapet walls.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Roofing",
-        "value": "Concealed Water-Proofed Deck"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 20,
-    "title": "A twin three-bedroom duplex layout with shaded terrace",
-    "owner": "Private Client",
-    "subtitle": "Semi-Detached Duplex",
-    "location": "Jahi District, Abuja",
-    "country": "NG",
-    "area": "480 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.07.jpeg",
-    "blueprint": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.08 (1).jpeg",
-    "description": "Architectural perspective highlighting covered ground-floor entry porch and upper level shaded terrace louvers.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Solar Shading",
-        "value": "Integrated Aluminum Pergola"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 21,
-    "title": "A contemporary semi-detached residential unit concept",
-    "owner": "Private Client",
-    "subtitle": "Semi-Detached Duplex",
-    "location": "Mbora District, Abuja",
-    "country": "NG",
-    "area": "500 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.08 (1).jpeg",
-    "blueprint": "/assets/3d-7.jpeg",
-    "description": "Dusk lighting view emphasizing warm window tones, exterior wall sconces, and low-maintenance stone veneer panels.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Wall Cladding",
-        "value": "Natural Granite Veneer"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 22,
-    "title": "A twin three-bedroom duplex with private entrance courtyard",
-    "owner": "Private Client",
-    "subtitle": "Semi-Detached Duplex",
-    "location": "Jahi District, Abuja",
-    "country": "NG",
-    "area": "480 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.08 (2).jpeg",
-    "blueprint": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.00.jpeg",
-    "description": "High-angle perspective showing roofline geometry, private courtyard boundaries, and site access layout.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Courtyard",
-        "value": "Paved Private Entry"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 23,
-    "title": "A twelve-unit three-bedroom luxury apartment complex",
-    "owner": "Private Client",
-    "subtitle": "3-Bedroom Apartment Complex",
-    "location": "Utako District, Abuja",
-    "country": "NG",
-    "area": "1,380 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.47.59 (1).jpeg",
-    "blueprint": "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.47.59.jpeg",
-    "description": "A four-story residential apartment block designed with twelve spacious three-bedroom units featuring ensuite bathrooms and private balconies.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation with Piles"
-      },
-      {
-        "label": "Unit Count",
-        "value": "12 Units (3 Bedrooms Each)"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 24,
-    "title": "A contemporary twelve-unit three-bedroom residential development",
-    "owner": "Private Client",
-    "subtitle": "3-Bedroom Apartment Complex",
-    "location": "Utako District, Abuja",
-    "country": "NG",
-    "area": "1,380 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.47.59.jpeg",
-    "blueprint": "/assets/3d-8.jpeg",
-    "description": "Side elevation render detailing column grids, upper level cantilevered balconies, and central elevator shaft envelope.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Vertical Transport",
-        "value": "8-Person Passenger Elevator"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 25,
-    "title": "A modern multi-story twelve-unit three-bedroom apartment building",
-    "owner": "Private Client",
-    "subtitle": "3-Bedroom Apartment Complex",
-    "location": "Utako District, Abuja",
-    "country": "NG",
-    "area": "1,380 M\u00b2",
-    "structure": "Reinforced Concrete Frame",
-    "timeline": "Concept & Design Phase",
-    "image": "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.00 (1).jpeg",
-    "blueprint": "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.47.59 (1).jpeg",
-    "description": "Perspective view from street level showing perimeter fence integration, gated entry access, and landscaped perimeter.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Raft Foundation"
-      },
-      {
-        "label": "Gatehouse",
-        "value": "Integrated Security Post"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "Eurocode 2 Compliance"
-      }
-    ]
-  },
-  {
-    "id": 26,
-    "title": "A completed modern residential villa in UAE",
-    "owner": "Private Client",
-    "subtitle": "Completed Villa Project",
-    "location": "Dubai, UAE",
-    "country": "AE",
-    "area": "TBC",
-    "structure": "Reinforced Concrete & Steel",
-    "timeline": "Completed",
-    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.08.jpeg",
-    "blueprint": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09.jpeg",
-    "description": "Real completed villa photograph showing modern architectural lines, crisp white exterior finish, and custom glass doors.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Reinforced Concrete Raft"
-      },
-      {
-        "label": "Exterior Finish",
-        "value": "Weatherproof Mineral Render"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "UAE Building Code Compliant"
-      }
-    ]
-  },
-  {
-    "id": 27,
-    "title": "A luxury finished residential villa featuring exterior lighting",
-    "owner": "Private Client",
-    "subtitle": "Completed Villa Project",
-    "location": "Dubai, UAE",
-    "country": "AE",
-    "area": "TBC",
-    "structure": "Reinforced Concrete & Steel",
-    "timeline": "Completed",
-    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09 (1).jpeg",
-    "blueprint": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.19.jpeg",
-    "description": "Completed villa photograph capturing evening lighting, wall accent lights, and clean architectural geometry.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Reinforced Concrete Raft"
-      },
-      {
-        "label": "Lighting",
-        "value": "IP65 Exterior LED Fixtures"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "UAE Building Code Compliant"
-      }
-    ]
-  },
-  {
-    "id": 28,
-    "title": "A completed contemporary villa entrance elevation in UAE",
-    "owner": "Private Client",
-    "subtitle": "Completed Villa Project",
-    "location": "Dubai, UAE",
-    "country": "AE",
-    "area": "TBC",
-    "structure": "Reinforced Concrete & Steel",
-    "timeline": "Completed",
-    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09 (2).jpeg",
-    "blueprint": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.10.jpeg",
-    "description": "Photo of main entryway displaying marble step finishes, custom security door frame, and recessed ceiling downlights.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Reinforced Concrete Raft"
-      },
-      {
-        "label": "Entrance Door",
-        "value": "Solid Hardwood & Steel Core"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "UAE Building Code Compliant"
-      }
-    ]
-  },
-  {
-    "id": 29,
-    "title": "A completed luxury private residence with pool terrace in UAE",
-    "owner": "Private Client",
-    "subtitle": "Completed Villa Project",
-    "location": "Dubai, UAE",
-    "country": "AE",
-    "area": "TBC",
-    "structure": "Reinforced Concrete & Steel",
-    "timeline": "Completed",
-    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09.jpeg",
-    "blueprint": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.20 (1).jpeg",
-    "description": "Completed backyard photograph featuring swimming pool deck, stone coping, and seamless indoor-outdoor sliding glass panels.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Reinforced Concrete Raft"
-      },
-      {
-        "label": "Pool Shell",
-        "value": "Waterproofed RC Basin"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "UAE Building Code Compliant"
-      }
-    ]
-  },
-  {
-    "id": 30,
-    "title": "A finished modern villa facade with premium stonework in UAE",
-    "owner": "Private Client",
-    "subtitle": "Completed Villa Project",
-    "location": "Dubai, UAE",
-    "country": "AE",
-    "area": "TBC",
-    "structure": "Reinforced Concrete & Steel",
-    "timeline": "Completed",
-    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.10 (1).jpeg",
-    "blueprint": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.19.jpeg",
-    "description": "Photograph of front facade showing polished travertine stone tile cladding, dark metal trim, and perimeter landscaping.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Reinforced Concrete Raft"
-      },
-      {
-        "label": "Cladding",
-        "value": "Travertine Stone Panels"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "UAE Building Code Compliant"
-      }
-    ]
-  },
-  {
-    "id": 31,
-    "title": "A completed private residential villa view in UAE",
-    "owner": "Private Client",
-    "subtitle": "Completed Villa Project",
-    "location": "Dubai, UAE",
-    "country": "AE",
-    "area": "TBC",
-    "structure": "Reinforced Concrete & Steel",
-    "timeline": "Completed",
-    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.10.jpeg",
-    "blueprint": "/assets/3d-6.jpeg",
-    "description": "Overall elevation photo showing floor overhangs, tinted UV-protective glazing, and clean structural finishing.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Reinforced Concrete Raft"
-      },
-      {
-        "label": "Glass Spec",
-        "value": "Double Low-E Tinted Solar Control"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "UAE Building Code Compliant"
-      }
-    ]
-  },
-  {
-    "id": 32,
-    "title": "An exterior view of a completed high-end villa in UAE",
-    "owner": "Private Client",
-    "subtitle": "Completed Villa Project",
-    "location": "Dubai, UAE",
-    "country": "AE",
-    "area": "TBC",
-    "structure": "Reinforced Concrete & Steel",
-    "timeline": "Completed",
-    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.19.jpeg",
-    "blueprint": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.20.jpeg",
-    "description": "Photographic view displaying perimeter wall detailing, automatic sliding vehicle gate, and paved driveway.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Reinforced Concrete Raft"
-      },
-      {
-        "label": "Driveway",
-        "value": "Heavy-Duty Interlocking Pavers"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "UAE Building Code Compliant"
-      }
-    ]
-  },
-  {
-    "id": 33,
-    "title": "A completed modern villa residence side elevation in UAE",
-    "owner": "Private Client",
-    "subtitle": "Completed Villa Project",
-    "location": "Dubai, UAE",
-    "country": "AE",
-    "area": "TBC",
-    "structure": "Reinforced Concrete & Steel",
-    "timeline": "Completed",
-    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.20 (1).jpeg",
-    "blueprint": "/assets/3d-7.jpeg",
-    "description": "Side boundary photo showing boundary clearance, drainage points, and high-quality exterior plastering.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Reinforced Concrete Raft"
-      },
-      {
-        "label": "Boundary Setback",
-        "value": "3m Villa Setback Standard"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "UAE Building Code Compliant"
-      }
-    ]
-  },
-  {
-    "id": 34,
-    "title": "A finished contemporary residential home in UAE",
-    "owner": "Private Client",
-    "subtitle": "Completed Villa Project",
-    "location": "Dubai, UAE",
-    "country": "AE",
-    "area": "TBC",
-    "structure": "Reinforced Concrete & Steel",
-    "timeline": "Completed",
-    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.20.jpeg",
-    "blueprint": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.20 (1).jpeg",
-    "description": "Full front perspective photo showcasing completed architectural landscaping, parapet roofline, and modern villa finishes.",
-    "details": [
-      {
-        "label": "Foundation",
-        "value": "Reinforced Concrete Raft"
-      },
-      {
-        "label": "Roof Deck",
-        "value": "Insulated Waterproofed Slab"
-      },
-      {
-        "label": "Engineering Standard",
-        "value": "UAE Building Code Compliant"
-      }
+    id: 6,
+    title: "Completed residential villas in the UAE",
+    owner: "Private Client",
+    subtitle: "Completed Villa Projects",
+    location: "Dubai, UAE",
+    country: "AE",
+    area: "TBC",
+    structure: "Reinforced Concrete & Steel",
+    timeline: "Completed",
+    description: "A collection of completed modern villas in the UAE — crisp white finishes, premium stonework, and clean architectural lines delivered to a high standard.",
+    gallery: [
+      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.08.jpeg",
+      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09 (1).jpeg",
+      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09 (2).jpeg",
+      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09.jpeg",
+      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.10 (1).jpeg",
+      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.10.jpeg",
+      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.19.jpeg",
+      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.20 (1).jpeg",
+      "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.20.jpeg"
+    ],
+    details: [
+      { label: "Foundation", value: "Reinforced Concrete Raft" },
+      { label: "Exterior Finish", value: "Weatherproof Mineral Render" },
+      { label: "Engineering Standard", value: "UAE Building Code Compliant" }
     ]
   }
 ];
@@ -986,7 +183,7 @@ const projects = [
     <div class="flex flex-col gap-16 md:gap-24">
       {projects.map((project, idx) => (
         <div 
-          class={`flex flex-col lg:flex-row gap-8 lg:gap-16 items-stretch case-study-row`}
+          class={`flex flex-col lg:flex-row gap-8 lg:gap-16 items-stretch`}
           data-id={project.id}
         >
           <!-- Project Info Panel (Left on alternate, right on others) -->
@@ -1009,7 +206,7 @@ const projects = [
                 {project.description}
               </p>
 
-              <!-- Technical Engineering Metrics Table (Requested) -->
+              <!-- Technical Engineering Metrics Table -->
               <div class="border border-white/10 rounded-lg overflow-hidden mb-8">
                 <div class="grid grid-cols-2 border-b border-white/5 bg-white/[0.01]">
                   <div class="p-4 border-r border-white/5">
@@ -1043,87 +240,59 @@ const projects = [
                 ))}
               </div>
             </div>
-
-            <!-- Action Button -->
-            <div class="mt-10">
-              <button 
-                class="view-details-btn inline-flex items-center gap-3 text-xs uppercase tracking-widest font-semibold text-white hover:text-brand-red transition-colors duration-300"
-                data-target={project.id}
-              >
-                See Design Details
-                <span class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:border-brand-red transition-all">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </span>
-              </button>
-            </div>
           </div>
 
-          <!-- Image / Interactive Tab Display (Right on alternate, left on others) -->
+          <!-- Image Carousel (Right on alternate, left on others) -->
           <div class={`flex-1 relative rounded-xl overflow-hidden min-h-[350px] md:min-h-[450px] border border-white/10 shadow-xl order-1 ${idx % 2 === 0 ? 'lg:order-2' : 'lg:order-1'} group`}>
             
-            <!-- Default Render Image -->
-            <div class="absolute inset-0 z-0 transition-transform duration-700 group-hover:scale-105" id={`render-img-${project.id}`}>
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                class="w-full h-full object-cover"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
+            <!-- Gallery slides -->
+            <div class="absolute inset-0 z-0 carousel-track flex transition-transform duration-500 ease-out" data-track={project.id}>
+              {project.gallery.map((src, i) => (
+                <div class="w-full h-full shrink-0 relative" data-slide={project.id}>
+                  <img 
+                    src={src} 
+                    alt={`${project.title} — view ${i + 1}`} 
+                    class="w-full h-full object-cover"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
+                </div>
+              ))}
             </div>
 
-            <!-- Technical Detail Overlay (revealed on button toggle) -->
-            <div 
-              class="absolute inset-0 z-10 bg-brand-dark/95 flex flex-col justify-between p-6 opacity-0 pointer-events-none transition-all duration-500 transform translate-y-4"
-              id={`blueprint-panel-${project.id}`}
-            >
-              <div class="flex items-center justify-between border-b border-white/10 pb-4">
-                <h4 class="font-serif text-lg font-bold text-white uppercase tracking-wider">Design Details</h4>
-                <button 
-                  class="close-blueprint-btn text-brand-gray hover:text-white"
-                  data-target={project.id}
-                >
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                  </svg>
-                </button>
-              </div>
-
-              <!-- Blueprint / structural mockup image -->
-              <div class="flex-1 my-4 rounded border border-white/5 overflow-hidden bg-brand-charcoal relative">
-                <img 
-                  src={project.blueprint} 
-                  alt="Technical Blueprint" 
-                  class="w-full h-full object-cover mix-blend-lighten opacity-80 filter grayscale sepia hue-rotate-[190deg] saturate-200"
-                />
-              </div>
-
-              <div class="text-xs text-brand-gray flex justify-between">
-                <span>Drawing Ref: FB-DET-{project.id}04</span>
-                <span>Scale: 1:150 @ A3</span>
-              </div>
-            </div>
-            
-            <!-- Country Flag Badge on Image -->
+            <!-- Country Flag Badge -->
             <div class="absolute top-4 left-4 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded bg-brand-dark/80 backdrop-blur border border-white/10 text-[10px] uppercase tracking-wider font-semibold text-white/70" set:html={`${flagMap[project.country]} <span class="ml-1.5">${countryNameMap[project.country]}</span>`}>
             </div>
 
-            <!-- Quick View Toggle Buttons -->
-            <div class="absolute top-4 right-4 z-20 flex gap-2">
+            <!-- Image Counter -->
+            <div class="absolute top-4 right-4 z-20 px-2.5 py-1 rounded bg-brand-dark/80 backdrop-blur border border-white/10 text-[10px] uppercase tracking-wider font-semibold text-white/70" data-counter={project.id}>
+              <span data-current={project.id}>1</span> / {project.gallery.length}
+            </div>
+
+            <!-- Prev / Next Controls -->
+            <div class="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between">
               <button 
-                class="img-mode-btn bg-brand-dark/80 hover:bg-brand-red text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded backdrop-blur border border-white/10 active-btn"
-                data-id={project.id}
-                data-mode="render"
+                class="carousel-prev w-9 h-9 rounded-full bg-brand-dark/80 hover:bg-brand-red text-white flex items-center justify-center border border-white/10 transition-all"
+                data-target={project.id}
+                aria-label="Previous image"
               >
-                Design
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
               </button>
+              <div class="flex gap-2" data-dots={project.id}>
+                {project.gallery.map((_, i) => (
+                  <button 
+                    class={`carousel-dot w-2 h-2 rounded-full transition-all duration-300 ${i === 0 ? 'bg-brand-red w-6' : 'bg-white/40'}`}
+                    data-target={project.id}
+                    data-index={i}
+                    aria-label={`Go to image ${i + 1}`}
+                  ></button>
+                ))}
+              </div>
               <button 
-                class="img-mode-btn bg-brand-dark/80 hover:bg-brand-red text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded backdrop-blur border border-white/10"
-                data-id={project.id}
-                data-mode="blueprint"
+                class="carousel-next w-9 h-9 rounded-full bg-brand-dark/80 hover:bg-brand-red text-white flex items-center justify-center border border-white/10 transition-all"
+                data-target={project.id}
+                aria-label="Next image"
               >
-                Blueprint
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
               </button>
             </div>
           </div>
@@ -1134,63 +303,42 @@ const projects = [
   </div>
 </section>
 
-<style>
-  .active-btn {
-    background-color: var(--color-brand-red) !important;
-    border-color: var(--color-brand-red) !important;
-  }
-</style>
-
 <script>
-  // Add interactive display controls for renders vs structural blueprints
-  const viewDetailBtns = document.querySelectorAll('.view-details-btn');
-  const closeBlueprintBtns = document.querySelectorAll('.close-blueprint-btn');
-  const imgModeBtns = document.querySelectorAll('.img-mode-btn');
+  // Carousel logic — one instance per project
+  document.querySelectorAll('[data-track]').forEach(track => {
+    const id = track.getAttribute('data-track');
+    const slides = document.querySelectorAll(`[data-slide="${id}"]`);
+    const total = slides.length;
+    const prevBtn = document.querySelector(`.carousel-prev[data-target="${id}"]`);
+    const nextBtn = document.querySelector(`.carousel-next[data-target="${id}"]`);
+    const dots = document.querySelectorAll(`.carousel-dot[data-target="${id}"]`);
+    const counter = document.querySelector(`[data-current="${id}"]`);
+    let current = 0;
 
-  // Toggle blueprint panel
-  viewDetailBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-target');
-      const panel = document.getElementById(`blueprint-panel-${targetId}`);
-      if (panel) {
-        panel.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-        panel.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
-      }
-    });
-  });
-
-  closeBlueprintBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-target');
-      const panel = document.getElementById(`blueprint-panel-${targetId}`);
-      if (panel) {
-        panel.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-        panel.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
-      }
-    });
-  });
-
-  // Tab controls for Render / Structural Detail button triggers
-  imgModeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.getAttribute('data-id');
-      const mode = btn.getAttribute('data-mode');
-      const panel = document.getElementById(`blueprint-panel-${id}`);
-      
-      // Update button highlights
-      const rowButtons = document.querySelectorAll(`.img-mode-btn[data-id="${id}"]`);
-      rowButtons.forEach(b => b.classList.remove('active-btn'));
-      btn.classList.add('active-btn');
-
-      if (panel) {
-        if (mode === 'blueprint') {
-          panel.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-          panel.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((dot, i) => {
+        if (i === current) {
+          dot.classList.add('bg-brand-red', 'w-6');
+          dot.classList.remove('bg-white/40');
         } else {
-          panel.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-          panel.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+          dot.classList.remove('bg-brand-red', 'w-6');
+          dot.classList.add('bg-white/40');
         }
-      }
+      });
+      if (counter) counter.textContent = current + 1;
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+    dots.forEach(dot => dot.addEventListener('click', () => goTo(parseInt(dot.getAttribute('data-index'), 10))));
+
+    // Keyboard support
+    track.setAttribute('tabindex', '0');
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') goTo(current - 1);
+      if (e.key === 'ArrowRight') goTo(current + 1);
     });
   });
 </script>
