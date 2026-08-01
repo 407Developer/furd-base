@@ -9,117 +9,955 @@ const countryNameMap = { NG: 'Nigeria', AE: 'UAE' };
 
 const projects = [
   {
-    id: 1,
-    title: "A stunning six-bedroom fully detached duplex",
-    owner: "Anaezionwu Jabuike Henry",
-    subtitle: "Detached Duplex Design",
-    location: "Maitama District, Abuja",
-    country: "NG",
-    area: "580 M²",
-    structure: "Post-Tensioned Concrete Slab",
-    timeline: "16 Months (Completed)",
-    image: "/assets/real-1.jpeg",
-    blueprint: "/assets/3d-3.jpeg",
-    description: "This fully detached duplex was designed and built with a modern organic style — maximum glass exposure, deep overhangs for the tropical climate, and a post-tensioned slab that keeps the structure light yet strong.",
-    details: [
-      { label: "Foundation", value: "Raft Foundation (1.2m Depth)" },
-      { label: "Facade", value: "Double Glazed Low-E Glass" },
-      { label: "Engineering Standard", value: "Eurocode 2 Compliance" }
+    "id": 1,
+    "title": "A modern six-bedroom fully detached duplex with grand entry canopy",
+    "owner": "Private Client",
+    "subtitle": "Detached Duplex Design",
+    "location": "Maitama District, Abuja",
+    "country": "NG",
+    "area": "580 M\u00b2",
+    "structure": "Post-Tensioned Concrete Slab",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01 (1).jpeg",
+    "blueprint": "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.02.jpeg",
+    "description": "A spacious six-bedroom detached duplex designed with cantilevered balconies, extensive floor-to-ceiling glass paneling, and an integrated double carport.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation (1.2m Depth)"
+      },
+      {
+        "label": "Facade",
+        "value": "Double Glazed Low-E Glass"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
     ]
   },
   {
-    id: 2,
-    title: "A modern luxury villa concept",
-    owner: "FURD BASE Design",
-    subtitle: "Contemporary Villa Concept",
-    location: "CBD, Abuja",
-    country: "NG",
-    area: "450 M²",
-    structure: "Reinforced Concrete Frame",
-    timeline: "Concept & Design Phase",
-    image: "/assets/3d-2.jpeg",
-    blueprint: "/assets/3d-8.jpeg",
-    description: "A clean, contemporary villa layout with open living spaces, a wide balcony line, and structural framing designed for easy future expansion. Every line is engineered for both beauty and buildability.",
-    details: [
-      { label: "Foundation", value: "Raft Foundation" },
-      { label: "Ceiling Height", value: "3.8m throughout" },
-      { label: "Engineering Standard", value: "Eurocode 2 Compliance" }
+    "id": 2,
+    "title": "A six-bedroom detached duplex design featuring side elevation detail",
+    "owner": "Private Client",
+    "subtitle": "Detached Duplex Design",
+    "location": "Guzape District, Abuja",
+    "country": "NG",
+    "area": "580 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01 (2).jpeg",
+    "blueprint": "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01.jpeg",
+    "description": "Side elevation render demonstrating structural overhangs, clean horizontal banding, and climate-conscious sun shading elements.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Structure",
+        "value": "RC Columns & Beams"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
     ]
   },
   {
-    id: 3,
-    title: "A minimalist waterfront residence",
-    owner: "Private Client",
-    subtitle: "Waterfront Residence Concept",
-    location: "Lekki Peninsula, Lagos",
-    country: "NG",
-    area: "420 M²",
-    structure: "Reinforced Concrete Frame",
-    timeline: "Concept & Design Phase",
-    image: "/assets/3d-6.jpeg",
-    blueprint: "/assets/3d-7.jpeg",
-    description: "A coastal home designed for a high-saline environment — corrosion-proof reinforcement, deep shaded overhangs, and materials chosen to survive harsh coastal weather for decades.",
-    details: [
-      { label: "Foundation", value: "Precast Concrete Pile System" },
-      { label: "Structural Steel", value: "HDG (Hot-Dip Galvanized)" },
-      { label: "Storm Protection", value: "Grade 5 Hurricane Resistance" }
+    "id": 3,
+    "title": "A luxury six-bedroom detached duplex with wide glass balcony",
+    "owner": "Private Client",
+    "subtitle": "Detached Duplex Design",
+    "location": "Katampe Hill, Abuja",
+    "country": "NG",
+    "area": "600 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.01.jpeg",
+    "blueprint": "/assets/3d-3.jpeg",
+    "description": "Front perspective showcasing wide upper balconies, warm architectural wood accent louvers, and a sleek contemporary silhouette.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Piled Foundation"
+      },
+      {
+        "label": "Ceiling Height",
+        "value": "3.6m Floor-to-Ceiling"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
     ]
   },
   {
-    id: 4,
-    title: "An eco-friendly organic villa",
-    owner: "Private Client",
-    subtitle: "Eco Villa Concept",
-    location: "Maitama Hills, Abuja",
-    country: "NG",
-    area: "820 M²",
-    structure: "Composite Steel-Concrete Frame",
-    timeline: "Concept & Design Phase",
-    image: "/assets/3d-4.jpeg",
-    blueprint: "/assets/3d-5.jpeg",
-    description: "A hillside villa with smart ventilation, natural cooling, and a solar-integrated roof. Designed to sit gently on the land while standing strongly for generations.",
-    details: [
-      { label: "Foundation", value: "Piled Foundation with Ground Beams" },
-      { label: "Cantilever Span", value: "4.8m Architectural Projection" },
-      { label: "Power Grid", value: "30kW Integrated Solar Slate Roof" }
+    "id": 4,
+    "title": "A contemporary six-bedroom duplex with integrated carport",
+    "owner": "Private Client",
+    "subtitle": "Detached Duplex Design",
+    "location": "Jabi District, Abuja",
+    "country": "NG",
+    "area": "580 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.02 (1).jpeg",
+    "blueprint": "/assets/3d-8.jpeg",
+    "description": "Three-quarter front view highlighting the covered driveway parking, security entrance gate integration, and perimeter wall detailing.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Parking Capacity",
+        "value": "4 Vehicles Covered"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
     ]
   },
   {
-    id: 5,
-    title: "A reinforced foundation & structural works project",
-    owner: "FURD BASE Works",
-    subtitle: "Foundation & Groundworks",
-    location: "Abuja, Nigeria",
-    country: "NG",
-    area: "On-Site Works",
-    structure: "Reinforced Concrete Raft",
-    timeline: "Completed",
-    image: "/assets/WhatsApp Image 2026-06-23 at 15.03.40.jpeg",
-    blueprint: "/assets/3d-8.jpeg",
-    description: "Real on-site foundation works — reinforcing steel, load-tested concrete, and careful compliance with our safety standards. This is where a great building begins.",
-    details: [
-      { label: "Foundation", value: "Reinforced Raft System" },
-      { label: "Rebar Density", value: "120 kg/m³ (Grade 60)" },
-      { label: "Safety Factor", value: "1.5x (Exceeds Code)" }
+    "id": 5,
+    "title": "An elegant six-bedroom detached duplex rendered at sunset",
+    "owner": "Private Client",
+    "subtitle": "Detached Duplex Design",
+    "location": "Maitama District, Abuja",
+    "country": "NG",
+    "area": "620 M\u00b2",
+    "structure": "Post-Tensioned Concrete Slab",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/6 bedroom duplex/WhatsApp Image 2026-07-31 at 11.48.02.jpeg",
+    "blueprint": "/assets/3d-5.jpeg",
+    "description": "Dusk lighting render highlighting perimeter landscape wall sconces, accent facade reveals, and floor-to-ceiling glass illumination.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Lighting Spec",
+        "value": "Architectural LED Recessed"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
     ]
   },
   {
-    id: 6,
-    title: "A premium finishing & facade project",
-    owner: "FURD BASE Finishes",
-    subtitle: "Finishing & Facade Works",
-    location: "Abuja, Nigeria",
-    country: "NG",
-    area: "On-Site Works",
-    structure: "Plastered Facade System",
-    timeline: "Completed",
-    image: "/assets/WhatsApp Image 2026-06-23 at 15.04.57.jpeg",
-    blueprint: "/assets/real-2.jpeg",
-    description: "Careful external plastering and facade detailing that protects the structure beneath — tested for water repellency and finished to a premium standard.",
-    details: [
-      { label: "Render Tolerance", value: "±2mm across elevations" },
-      { label: "Curing Period", value: "14 days controlled" },
-      { label: "Water Repellency", value: "Contact angle > 90°" }
+    "id": 6,
+    "title": "A modern twelve-unit two-bedroom apartment block",
+    "owner": "Private Client",
+    "subtitle": "2-Bedroom Apartment Block",
+    "location": "Life Camp, Abuja",
+    "country": "NG",
+    "area": "1,150 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.04.jpeg",
+    "blueprint": "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.05.jpeg",
+    "description": "A four-story multi-family residential building designed to accommodate twelve self-contained two-bedroom apartments with optimized floor layouts.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft with Ground Beams"
+      },
+      {
+        "label": "Unit Count",
+        "value": "12 Units (2 Bedrooms Each)"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "A twelve-unit two-bedroom residential apartment complex view",
+    "owner": "Private Client",
+    "subtitle": "2-Bedroom Apartment Block",
+    "location": "Wuye District, Abuja",
+    "country": "NG",
+    "area": "1,150 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.05 (1).jpeg",
+    "blueprint": "/assets/3d-7.jpeg",
+    "description": "Angular perspective highlighting stairwell glass enclosure, structural columns, and uniform window openings across upper floors.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Staircase",
+        "value": "Enclosed RC Safety Core"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "A contemporary multi-family two-bedroom apartment building",
+    "owner": "Private Client",
+    "subtitle": "2-Bedroom Apartment Block",
+    "location": "Life Camp, Abuja",
+    "country": "NG",
+    "area": "1,200 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.05.jpeg",
+    "blueprint": "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.04.jpeg",
+    "description": "Full front facade perspective showing symmetry in architectural features, balcony glass railings, and ground floor access points.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Deep Raft Foundation"
+      },
+      {
+        "label": "Balcony Railings",
+        "value": "Toughened Safety Glass"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "A twelve-unit two-bedroom apartment block with landscaped forecourt",
+    "owner": "Private Client",
+    "subtitle": "2-Bedroom Apartment Block",
+    "location": "Wuye District, Abuja",
+    "country": "NG",
+    "area": "1,150 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/12 Units of 2 bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.06 (2).jpeg",
+    "blueprint": "/assets/3d-2.jpeg",
+    "description": "Ground-level view detailing paved parking areas, drainage channels, and entry security gate structure for apartment residents.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Paving Spec",
+        "value": "Interlocking Concrete Blocks"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "A multi-unit residential block featuring nine apartment units",
+    "owner": "Private Client",
+    "subtitle": "Mixed Apartment Development",
+    "location": "Katampe Main, Abuja",
+    "country": "NG",
+    "area": "1,450 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/733233149_122101090251370937_6061833491946118441_n.jpg",
+    "blueprint": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03.jpeg",
+    "description": "Mixed-density residential block designed with six 3-bedroom apartments and three 2-bedroom units, maximizing plot efficiency.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Composition",
+        "value": "6 x 3-Bed & 3 x 2-Bed"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "A nine-unit mixed apartment development with modern facade",
+    "owner": "Private Client",
+    "subtitle": "Mixed Apartment Development",
+    "location": "Gwarinpa, Abuja",
+    "country": "NG",
+    "area": "1,450 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03 (1).jpeg",
+    "blueprint": "/assets/3d-4.jpeg",
+    "description": "Elevated side render depicting upper floor projections, dark accent wall panels, and climate-durable exterior paint finish.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Exterior Finish",
+        "value": "Textured Acrylic Render"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "A multi-family apartment building comprising three and two bedroom units",
+    "owner": "Private Client",
+    "subtitle": "Mixed Apartment Development",
+    "location": "Katampe Main, Abuja",
+    "country": "NG",
+    "area": "1,450 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03 copy.jpeg",
+    "blueprint": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.04 (1).jpeg",
+    "description": "Architectural visualization showing vertical element features, window alignment, and roof parapet cap detailing.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Roof Structure",
+        "value": "Hidden Structural Steel Roof"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "An architectural render of a nine-unit mixed apartment building",
+    "owner": "Private Client",
+    "subtitle": "Mixed Apartment Development",
+    "location": "Gwarinpa, Abuja",
+    "country": "NG",
+    "area": "1,450 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.03.jpeg",
+    "blueprint": "/assets/3d-6.jpeg",
+    "description": "Front corner view showing balanced structural geometry, recessed window bays, and integrated utility duct channels.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Glazing",
+        "value": "Powder-Coated Aluminum Frames"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "A side view of a nine-unit residential apartment development",
+    "owner": "Private Client",
+    "subtitle": "Mixed Apartment Development",
+    "location": "Katampe Main, Abuja",
+    "country": "NG",
+    "area": "1,450 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.04 (1).jpeg",
+    "blueprint": "/assets/3d-8.jpeg",
+    "description": "Detailed perspective showing service access corridors, staircase window mullions, and external AC compressor recessed ledges.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Services",
+        "value": "Concealed Piping & Cable Racks"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "A perspective view of a mixed residential block with private balconies",
+    "owner": "Private Client",
+    "subtitle": "Mixed Apartment Development",
+    "location": "Gwarinpa, Abuja",
+    "country": "NG",
+    "area": "1,450 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/WhatsApp Image 2026-07-31 at 11.48.04 copy.jpeg",
+    "blueprint": "/assets/projects/designs/6 units of 3-bedroom apartment and 3 units of 2 bedroom/733233149_122101090251370937_6061833491946118441_n.jpg",
+    "description": "Wide angle exterior render capturing the overall building envelope, front garden setback, and perimeter fence wall.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Setback",
+        "value": "6m Standard Road Setback"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "A semi-detached twin three-bedroom duplex residence",
+    "owner": "Private Client",
+    "subtitle": "Semi-Detached Duplex",
+    "location": "Jahi District, Abuja",
+    "country": "NG",
+    "area": "480 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.00.jpeg",
+    "blueprint": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.06.jpeg",
+    "description": "Symmetrical twin semi-detached units with private front verandas, dark stone cladding accents, and individual parking bays.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Units",
+        "value": "2 Semi-Detached Units"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "A modern twin three-bedroom duplex with double garage space",
+    "owner": "Private Client",
+    "subtitle": "Semi-Detached Duplex",
+    "location": "Mbora District, Abuja",
+    "country": "NG",
+    "area": "480 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.06 (1).jpeg",
+    "blueprint": "/assets/3d-3.jpeg",
+    "description": "Side angle render detailing balcony overhangs, upper level master suite glass windows, and clean white plaster finish.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Strip Foundation"
+      },
+      {
+        "label": "Balconies",
+        "value": "Cantilevered RC Slabs"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "A twin three-bedroom residential building design",
+    "owner": "Private Client",
+    "subtitle": "Semi-Detached Duplex",
+    "location": "Jahi District, Abuja",
+    "country": "NG",
+    "area": "480 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.06.jpeg",
+    "blueprint": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.07.jpeg",
+    "description": "Front elevation highlighting central dividing wall structure, individual entrance portals, and perimeter lighting.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Party Wall",
+        "value": "Sound-Insulated Double Cavity"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "An elevation view of a two-unit three-bedroom semi-detached villa",
+    "owner": "Private Client",
+    "subtitle": "Semi-Detached Duplex",
+    "location": "Mbora District, Abuja",
+    "country": "NG",
+    "area": "480 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.07 (1).jpeg",
+    "blueprint": "/assets/3d-5.jpeg",
+    "description": "Three-quarter view highlighting modern flat-roof design with concealed drainage gutters and perimeter parapet walls.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Roofing",
+        "value": "Concealed Water-Proofed Deck"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "A twin three-bedroom duplex layout with shaded terrace",
+    "owner": "Private Client",
+    "subtitle": "Semi-Detached Duplex",
+    "location": "Jahi District, Abuja",
+    "country": "NG",
+    "area": "480 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.07.jpeg",
+    "blueprint": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.08 (1).jpeg",
+    "description": "Architectural perspective highlighting covered ground-floor entry porch and upper level shaded terrace louvers.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Solar Shading",
+        "value": "Integrated Aluminum Pergola"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "title": "A contemporary semi-detached residential unit concept",
+    "owner": "Private Client",
+    "subtitle": "Semi-Detached Duplex",
+    "location": "Mbora District, Abuja",
+    "country": "NG",
+    "area": "500 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.08 (1).jpeg",
+    "blueprint": "/assets/3d-7.jpeg",
+    "description": "Dusk lighting view emphasizing warm window tones, exterior wall sconces, and low-maintenance stone veneer panels.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Wall Cladding",
+        "value": "Natural Granite Veneer"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "A twin three-bedroom duplex with private entrance courtyard",
+    "owner": "Private Client",
+    "subtitle": "Semi-Detached Duplex",
+    "location": "Jahi District, Abuja",
+    "country": "NG",
+    "area": "480 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.08 (2).jpeg",
+    "blueprint": "/assets/projects/designs/2 units of 3-bedroom/WhatsApp Image 2026-07-31 at 11.48.00.jpeg",
+    "description": "High-angle perspective showing roofline geometry, private courtyard boundaries, and site access layout.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Courtyard",
+        "value": "Paved Private Entry"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "A twelve-unit three-bedroom luxury apartment complex",
+    "owner": "Private Client",
+    "subtitle": "3-Bedroom Apartment Complex",
+    "location": "Utako District, Abuja",
+    "country": "NG",
+    "area": "1,380 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.47.59 (1).jpeg",
+    "blueprint": "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.47.59.jpeg",
+    "description": "A four-story residential apartment block designed with twelve spacious three-bedroom units featuring ensuite bathrooms and private balconies.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation with Piles"
+      },
+      {
+        "label": "Unit Count",
+        "value": "12 Units (3 Bedrooms Each)"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "A contemporary twelve-unit three-bedroom residential development",
+    "owner": "Private Client",
+    "subtitle": "3-Bedroom Apartment Complex",
+    "location": "Utako District, Abuja",
+    "country": "NG",
+    "area": "1,380 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.47.59.jpeg",
+    "blueprint": "/assets/3d-8.jpeg",
+    "description": "Side elevation render detailing column grids, upper level cantilevered balconies, and central elevator shaft envelope.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Vertical Transport",
+        "value": "8-Person Passenger Elevator"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "title": "A modern multi-story twelve-unit three-bedroom apartment building",
+    "owner": "Private Client",
+    "subtitle": "3-Bedroom Apartment Complex",
+    "location": "Utako District, Abuja",
+    "country": "NG",
+    "area": "1,380 M\u00b2",
+    "structure": "Reinforced Concrete Frame",
+    "timeline": "Concept & Design Phase",
+    "image": "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.48.00 (1).jpeg",
+    "blueprint": "/assets/projects/designs/12 Units of 3-bedroom apartment/WhatsApp Image 2026-07-31 at 11.47.59 (1).jpeg",
+    "description": "Perspective view from street level showing perimeter fence integration, gated entry access, and landscaped perimeter.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Raft Foundation"
+      },
+      {
+        "label": "Gatehouse",
+        "value": "Integrated Security Post"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "Eurocode 2 Compliance"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "A completed modern residential villa in UAE",
+    "owner": "Private Client",
+    "subtitle": "Completed Villa Project",
+    "location": "Dubai, UAE",
+    "country": "AE",
+    "area": "TBC",
+    "structure": "Reinforced Concrete & Steel",
+    "timeline": "Completed",
+    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.08.jpeg",
+    "blueprint": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09.jpeg",
+    "description": "Real completed villa photograph showing modern architectural lines, crisp white exterior finish, and custom glass doors.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Reinforced Concrete Raft"
+      },
+      {
+        "label": "Exterior Finish",
+        "value": "Weatherproof Mineral Render"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "UAE Building Code Compliant"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "A luxury finished residential villa featuring exterior lighting",
+    "owner": "Private Client",
+    "subtitle": "Completed Villa Project",
+    "location": "Dubai, UAE",
+    "country": "AE",
+    "area": "TBC",
+    "structure": "Reinforced Concrete & Steel",
+    "timeline": "Completed",
+    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09 (1).jpeg",
+    "blueprint": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.19.jpeg",
+    "description": "Completed villa photograph capturing evening lighting, wall accent lights, and clean architectural geometry.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Reinforced Concrete Raft"
+      },
+      {
+        "label": "Lighting",
+        "value": "IP65 Exterior LED Fixtures"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "UAE Building Code Compliant"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "title": "A completed contemporary villa entrance elevation in UAE",
+    "owner": "Private Client",
+    "subtitle": "Completed Villa Project",
+    "location": "Dubai, UAE",
+    "country": "AE",
+    "area": "TBC",
+    "structure": "Reinforced Concrete & Steel",
+    "timeline": "Completed",
+    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09 (2).jpeg",
+    "blueprint": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.10.jpeg",
+    "description": "Photo of main entryway displaying marble step finishes, custom security door frame, and recessed ceiling downlights.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Reinforced Concrete Raft"
+      },
+      {
+        "label": "Entrance Door",
+        "value": "Solid Hardwood & Steel Core"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "UAE Building Code Compliant"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "A completed luxury private residence with pool terrace in UAE",
+    "owner": "Private Client",
+    "subtitle": "Completed Villa Project",
+    "location": "Dubai, UAE",
+    "country": "AE",
+    "area": "TBC",
+    "structure": "Reinforced Concrete & Steel",
+    "timeline": "Completed",
+    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.09.jpeg",
+    "blueprint": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.20 (1).jpeg",
+    "description": "Completed backyard photograph featuring swimming pool deck, stone coping, and seamless indoor-outdoor sliding glass panels.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Reinforced Concrete Raft"
+      },
+      {
+        "label": "Pool Shell",
+        "value": "Waterproofed RC Basin"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "UAE Building Code Compliant"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "A finished modern villa facade with premium stonework in UAE",
+    "owner": "Private Client",
+    "subtitle": "Completed Villa Project",
+    "location": "Dubai, UAE",
+    "country": "AE",
+    "area": "TBC",
+    "structure": "Reinforced Concrete & Steel",
+    "timeline": "Completed",
+    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.10 (1).jpeg",
+    "blueprint": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.19.jpeg",
+    "description": "Photograph of front facade showing polished travertine stone tile cladding, dark metal trim, and perimeter landscaping.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Reinforced Concrete Raft"
+      },
+      {
+        "label": "Cladding",
+        "value": "Travertine Stone Panels"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "UAE Building Code Compliant"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "title": "A completed private residential villa view in UAE",
+    "owner": "Private Client",
+    "subtitle": "Completed Villa Project",
+    "location": "Dubai, UAE",
+    "country": "AE",
+    "area": "TBC",
+    "structure": "Reinforced Concrete & Steel",
+    "timeline": "Completed",
+    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.48.10.jpeg",
+    "blueprint": "/assets/3d-6.jpeg",
+    "description": "Overall elevation photo showing floor overhangs, tinted UV-protective glazing, and clean structural finishing.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Reinforced Concrete Raft"
+      },
+      {
+        "label": "Glass Spec",
+        "value": "Double Low-E Tinted Solar Control"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "UAE Building Code Compliant"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "title": "An exterior view of a completed high-end villa in UAE",
+    "owner": "Private Client",
+    "subtitle": "Completed Villa Project",
+    "location": "Dubai, UAE",
+    "country": "AE",
+    "area": "TBC",
+    "structure": "Reinforced Concrete & Steel",
+    "timeline": "Completed",
+    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.19.jpeg",
+    "blueprint": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.20.jpeg",
+    "description": "Photographic view displaying perimeter wall detailing, automatic sliding vehicle gate, and paved driveway.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Reinforced Concrete Raft"
+      },
+      {
+        "label": "Driveway",
+        "value": "Heavy-Duty Interlocking Pavers"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "UAE Building Code Compliant"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "title": "A completed modern villa residence side elevation in UAE",
+    "owner": "Private Client",
+    "subtitle": "Completed Villa Project",
+    "location": "Dubai, UAE",
+    "country": "AE",
+    "area": "TBC",
+    "structure": "Reinforced Concrete & Steel",
+    "timeline": "Completed",
+    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.20 (1).jpeg",
+    "blueprint": "/assets/3d-7.jpeg",
+    "description": "Side boundary photo showing boundary clearance, drainage points, and high-quality exterior plastering.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Reinforced Concrete Raft"
+      },
+      {
+        "label": "Boundary Setback",
+        "value": "3m Villa Setback Standard"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "UAE Building Code Compliant"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "title": "A finished contemporary residential home in UAE",
+    "owner": "Private Client",
+    "subtitle": "Completed Villa Project",
+    "location": "Dubai, UAE",
+    "country": "AE",
+    "area": "TBC",
+    "structure": "Reinforced Concrete & Steel",
+    "timeline": "Completed",
+    "image": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.20.jpeg",
+    "blueprint": "/assets/projects/finished projects UAE/WhatsApp Image 2026-07-31 at 11.54.20 (1).jpeg",
+    "description": "Full front perspective photo showcasing completed architectural landscaping, parapet roofline, and modern villa finishes.",
+    "details": [
+      {
+        "label": "Foundation",
+        "value": "Reinforced Concrete Raft"
+      },
+      {
+        "label": "Roof Deck",
+        "value": "Insulated Waterproofed Slab"
+      },
+      {
+        "label": "Engineering Standard",
+        "value": "UAE Building Code Compliant"
+      }
     ]
   }
 ];
