@@ -443,7 +443,7 @@ const projects = [
   // ---- Carousel swipe + navigation ----
   document.querySelectorAll('[data-track]').forEach(track => {
     const id = track.getAttribute('data-track');
-    const slides = Array.from(document.querySelectorAll(`[data-slide="${id}"]`));
+    const slides = Array.from(track.querySelectorAll('[data-slide]'));
     const total = slides.length;
     const prevBtn = document.querySelector(`.carousel-prev[data-target="${id}"]`);
     const nextBtn = document.querySelector(`.carousel-next[data-target="${id}"]`);
