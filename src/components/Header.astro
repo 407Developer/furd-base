@@ -99,7 +99,7 @@
     </div>
 
     <!-- Mobile Trigger -->
-    <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 focus:outline-none" aria-label="Toggle Menu">
+    <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 focus:outline-none relative z-[60]" aria-label="Toggle Menu">
       <span class="w-6 h-[2px] bg-white transition-all duration-300 burger-line"></span>
       <span class="w-6 h-[2px] bg-white transition-all duration-300 burger-line"></span>
       <span class="w-6 h-[2px] bg-white transition-all duration-300 burger-line"></span>
@@ -126,6 +126,20 @@
       </a>
     </div>
   </div>
+
+  <!-- Floating WhatsApp Contact -->
+  <a
+    id="floating-whatsapp"
+    href={`https://wa.me/${import.meta.env.PUBLIC_WHATSAPP_PHONE || '2348066033786'}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with us on WhatsApp"
+    class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg shadow-black/40 hover:scale-110 transition-transform duration-300 group"
+  >
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.022-.08-.124-.22-.364-.34-.24-.12-1.418-.7-1.638-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-.992-.367-1.89-1.166-.7-.624-1.171-1.396-1.309-1.637-.14-.24-.015-.369.106-.488.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.195-.47-.393-.407-.54-.415-.14-.008-.31-.008-.47-.008a.9.9 0 00-.66.3c-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.69 2.58 4.09 3.62.572.247 1.018.395 1.365.505.61.194 1.164.167 1.6.102.487-.072 1.418-.58 1.618-1.14.2-.56.2-1.04.14-1.14-.06-.1-.2-.16-.44-.28zM12 2C6.477 2 2 6.477 2 12c0 2.01.593 3.88 1.61 5.45L2.03 22l4.685-1.543c1.5.894 3.256 1.41 5.285 1.41 5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.85 0-3.56-.54-5-1.46l-.36-.21-2.92.96.98-2.84-.25-.39C3.54 14.64 3 12.87 3 11c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9z"/>
+    </svg>
+  </a>
 </header>
 
 <style>
@@ -167,21 +181,25 @@
   let isMenuOpen = false;
 
   function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
-    
-    if (isMenuOpen) {
-      mobileMenu?.classList.remove('translate-x-full');
-      burgerLines[0].classList.add('rotate-45', 'translate-y-[7px]');
-      burgerLines[1].classList.add('opacity-0');
-      burgerLines[2].classList.add('-rotate-45', '-translate-y-[7px]');
-      document.body.style.overflow = 'hidden';
-    } else {
-      mobileMenu?.classList.add('translate-x-full');
-      burgerLines[0].classList.remove('rotate-45', 'translate-y-[7px]');
-      burgerLines[1].classList.remove('opacity-0');
-      burgerLines[2].classList.remove('-rotate-45', '-translate-y-[7px]');
-      document.body.style.overflow = '';
-    }
+    isMenuOpen ? closeMenu() : openMenu();
+  }
+
+  function openMenu() {
+    isMenuOpen = true;
+    mobileMenu?.classList.remove('translate-x-full');
+    burgerLines[0].classList.add('rotate-45', 'translate-y-[7px]');
+    burgerLines[1].classList.add('opacity-0');
+    burgerLines[2].classList.add('-rotate-45', '-translate-y-[7px]');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    isMenuOpen = false;
+    mobileMenu?.classList.add('translate-x-full');
+    burgerLines[0].classList.remove('rotate-45', 'translate-y-[7px]');
+    burgerLines[1].classList.remove('opacity-0');
+    burgerLines[2].classList.remove('-rotate-45', '-translate-y-[7px]');
+    document.body.style.overflow = '';
   }
 
   menuToggle?.addEventListener('click', toggleMenu);
@@ -190,6 +208,17 @@
     link.addEventListener('click', () => {
       if (isMenuOpen) toggleMenu();
     });
+  });
+
+  // Close when tapping anywhere on the overlay that isn't a link/button
+  mobileMenu?.addEventListener('click', (e) => {
+    if (isMenuOpen && (e.target as HTMLElement)?.closest('a,button')) return;
+    if (isMenuOpen) closeMenu();
+  });
+
+  // Close with the Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isMenuOpen) closeMenu();
   });
 
   // ── Active nav state ──
