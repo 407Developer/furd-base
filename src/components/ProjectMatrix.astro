@@ -284,9 +284,19 @@ const projects = [
               </div>
 
               <!-- Case Study Overview -->
-              <p class="text-brand-gray text-sm md:text-base font-light leading-relaxed mb-8">
-                {project.description}
-              </p>
+              <div class="project-desc mb-8 collapsed" data-desc={project.id}>
+                <p class="text-brand-gray text-sm md:text-base font-light leading-relaxed">
+                  {project.description}
+                </p>
+                <button
+                  class="desc-toggle hidden items-center gap-1.5 mt-3 text-brand-red text-xs font-semibold uppercase tracking-widest hover:text-white transition-colors"
+                  data-desc-toggle={project.id}
+                  aria-expanded="false"
+                >
+                  <span data-desc-label>View More</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+              </div>
 
               <!-- Technical Engineering Metrics Table -->
               <div class="border border-white/10 rounded-lg overflow-hidden mb-8">
@@ -589,4 +599,43 @@ const projects = [
       e.stopPropagation();
     }
   });
+
+  // ---- View More / View Less for project descriptions ----
+  document.querySelectorAll('.project-desc').forEach(desc => {
+    const btn = desc.querySelector('.desc-toggle');
+    const p = desc.querySelector('p');
+    if (!btn || !p) return;
+
+    // Only show the toggle when the text actually overflows the 3-line clamp
+    const showBtn = () => {
+      if (desc.classList.contains('collapsed')) {
+        const clamped = p.scrollHeight > p.clientHeight;
+        btn.classList.toggle('hidden', !clamped);
+        btn.classList.toggle('flex', clamped);
+      }
+    };
+    showBtn();
+
+    btn.addEventListener('click', () => {
+      const isCollapsed = desc.classList.toggle('collapsed');
+      const label = btn.querySelector('[data-desc-label]');
+      if (label) label.textContent = isCollapsed ? 'View More' : 'View Less';
+      btn.setAttribute('aria-expanded', String(!isCollapsed));
+    });
+
+    window.addEventListener('resize', showBtn);
+  });
 </script>
+
+<style>
+  .project-desc.collapsed p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .project-desc:not(.collapsed) .desc-toggle svg {
+    transform: rotate(180deg);
+  }
+</style>
