@@ -288,6 +288,43 @@ const projects = [
                 <p class="text-brand-gray text-sm md:text-base font-light leading-relaxed">
                   {project.description}
                 </p>
+
+                <div class="desc-tech">
+                  <!-- Technical Engineering Metrics Table -->
+                  <div class="border border-white/10 rounded-lg overflow-hidden mt-6">
+                    <div class="grid grid-cols-2 border-b border-white/5 bg-white/[0.01]">
+                      <div class="p-4 border-r border-white/5">
+                        <span class="block text-[10px] uppercase text-brand-gray tracking-wider">Location</span>
+                        <span class="font-sans font-semibold text-white text-sm">{project.location}</span>
+                      </div>
+                      <div class="p-4">
+                        <span class="block text-[10px] uppercase text-brand-gray tracking-wider">Gross Area</span>
+                        <span class="font-sans font-semibold text-white text-sm">{project.area}</span>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2">
+                      <div class="p-4 border-r border-white/5">
+                        <span class="block text-[10px] uppercase text-brand-gray tracking-wider">Structural Type</span>
+                        <span class="font-sans font-semibold text-white text-sm">{project.structure}</span>
+                      </div>
+                      <div class="p-4">
+                        <span class="block text-[10px] uppercase text-brand-gray tracking-wider">Timeline</span>
+                        <span class="font-sans font-semibold text-white text-sm">{project.timeline}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Details/Structural Spec list -->
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    {project.details.map((detail) => (
+                      <div class="bg-brand-dark/40 border border-white/5 p-4 rounded text-left">
+                        <span class="block text-[9px] uppercase tracking-wider text-brand-gray mb-1">{detail.label}</span>
+                        <span class="text-xs font-medium text-white/90">{detail.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 <button
                   class="desc-toggle hidden items-center gap-1.5 mt-3 text-brand-red text-xs font-semibold uppercase tracking-widest hover:text-white transition-colors"
                   data-desc-toggle={project.id}
@@ -296,40 +333,6 @@ const projects = [
                   <span data-desc-label>View More</span>
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
-              </div>
-
-              <!-- Technical Engineering Metrics Table -->
-              <div class="border border-white/10 rounded-lg overflow-hidden mb-8">
-                <div class="grid grid-cols-2 border-b border-white/5 bg-white/[0.01]">
-                  <div class="p-4 border-r border-white/5">
-                    <span class="block text-[10px] uppercase text-brand-gray tracking-wider">Location</span>
-                    <span class="font-sans font-semibold text-white text-sm">{project.location}</span>
-                  </div>
-                  <div class="p-4">
-                    <span class="block text-[10px] uppercase text-brand-gray tracking-wider">Gross Area</span>
-                    <span class="font-sans font-semibold text-white text-sm">{project.area}</span>
-                  </div>
-                </div>
-                <div class="grid grid-cols-2">
-                  <div class="p-4 border-r border-white/5">
-                    <span class="block text-[10px] uppercase text-brand-gray tracking-wider">Structural Type</span>
-                    <span class="font-sans font-semibold text-white text-sm">{project.structure}</span>
-                  </div>
-                  <div class="p-4">
-                    <span class="block text-[10px] uppercase text-brand-gray tracking-wider">Timeline</span>
-                    <span class="font-sans font-semibold text-white text-sm">{project.timeline}</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Details/Structural Spec list -->
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {project.details.map((detail) => (
-                  <div class="bg-brand-dark/40 border border-white/5 p-4 rounded text-left">
-                    <span class="block text-[9px] uppercase tracking-wider text-brand-gray mb-1">{detail.label}</span>
-                    <span class="text-xs font-medium text-white/90">{detail.value}</span>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
@@ -604,15 +607,18 @@ const projects = [
   document.querySelectorAll('.project-desc').forEach(desc => {
     const btn = desc.querySelector('.desc-toggle');
     const p = desc.querySelector('p');
+    const tech = desc.querySelector('.desc-tech');
     if (!btn || !p) return;
 
-    // Only show the toggle when the text actually overflows the 3-line clamp
+    const isMobile = () => window.matchMedia('(max-width: 767px)').matches;
+
     const showBtn = () => {
-      if (desc.classList.contains('collapsed')) {
-        const clamped = p.scrollHeight > p.clientHeight;
-        btn.classList.toggle('hidden', !clamped);
-        btn.classList.toggle('flex', clamped);
-      }
+      if (!desc.classList.contains('collapsed')) return;
+      const descOverflows = p.scrollHeight > p.clientHeight;
+      const hasTech = !!tech && tech.children.length > 0;
+      const shouldShow = isMobile() ? (descOverflows || hasTech) : descOverflows;
+      btn.classList.toggle('hidden', !shouldShow);
+      btn.classList.toggle('flex', shouldShow);
     };
     showBtn();
 
@@ -621,6 +627,7 @@ const projects = [
       const label = btn.querySelector('[data-desc-label]');
       if (label) label.textContent = isCollapsed ? 'View More' : 'View Less';
       btn.setAttribute('aria-expanded', String(!isCollapsed));
+      if (isCollapsed) showBtn();
     });
 
     window.addEventListener('resize', showBtn);
@@ -637,5 +644,18 @@ const projects = [
 
   .project-desc:not(.collapsed) .desc-toggle svg {
     transform: rotate(180deg);
+  }
+
+  .project-desc.collapsed .desc-tech {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .project-desc.collapsed p {
+      display: block;
+    }
+    .project-desc.collapsed .desc-tech {
+      display: block;
+    }
   }
 </style>
